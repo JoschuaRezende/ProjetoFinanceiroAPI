@@ -1,0 +1,15 @@
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Context\bin\Debug\netcoreapp3.1\Padawan.ControleFinanceiro.Context.deps.json
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Context\bin\Debug\netcoreapp3.1\Padawan.ControleFinanceiro.Context.runtimeconfig.json
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Context\bin\Debug\netcoreapp3.1\Padawan.ControleFinanceiro.Context.runtimeconfig.dev.json
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Context\bin\Debug\netcoreapp3.1\Padawan.ControleFinanceiro.Context.dll
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Context\bin\Debug\netcoreapp3.1\Padawan.ControleFinanceiro.Context.pdb
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Context\bin\Debug\netcoreapp3.1\Padawan.ControleFinanceiro.Model.dll
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Context\bin\Debug\netcoreapp3.1\Padawan.ControleFinanceiro.Model.pdb
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Context\obj\Debug\netcoreapp3.1\Padawan.ControleFinanceiro.Context.csprojAssemblyReference.cache
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Context\obj\Debug\netcoreapp3.1\Padawan.ControleFinanceiro.Context.AssemblyInfoInputs.cache
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Context\obj\Debug\netcoreapp3.1\Padawan.ControleFinanceiro.Context.AssemblyInfo.cs
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Context\obj\Debug\netcoreapp3.1\Padawan.ControleFinanceiro.Context.csproj.CoreCompileInputs.cache
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Context\obj\Debug\netcoreapp3.1\Padawan.ControleFinanceiro.Context.csproj.CopyComplete
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Context\obj\Debug\netcoreapp3.1\Padawan.ControleFinanceiro.Context.dll
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Context\obj\Debug\netcoreapp3.1\Padawan.ControleFinanceiro.Context.pdb
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Context\obj\Debug\netcoreapp3.1\Padawan.ControleFinanceiro.Context.genruntimeconfig.cache

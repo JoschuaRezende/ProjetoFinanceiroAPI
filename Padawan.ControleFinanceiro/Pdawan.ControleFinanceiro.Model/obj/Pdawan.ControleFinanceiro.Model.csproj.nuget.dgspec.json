@@ -1,0 +1,68 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\joschua.silva\\Documents\\GitHub\\ProjetoFinanceiroAPI\\Padawan.ControleFinanceiro\\Pdawan.ControleFinanceiro.Model\\Pdawan.ControleFinanceiro.Model.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\joschua.silva\\Documents\\GitHub\\ProjetoFinanceiroAPI\\Padawan.ControleFinanceiro\\Pdawan.ControleFinanceiro.Model\\Pdawan.ControleFinanceiro.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\joschua.silva\\Documents\\GitHub\\ProjetoFinanceiroAPI\\Padawan.ControleFinanceiro\\Pdawan.ControleFinanceiro.Model\\Pdawan.ControleFinanceiro.Model.csproj",
+        "projectName": "Pdawan.ControleFinanceiro.Model",
+        "projectPath": "C:\\Users\\joschua.silva\\Documents\\GitHub\\ProjetoFinanceiroAPI\\Padawan.ControleFinanceiro\\Pdawan.ControleFinanceiro.Model\\Pdawan.ControleFinanceiro.Model.csproj",
+        "packagesPath": "C:\\Users\\joschua.silva\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joschua.silva\\Documents\\GitHub\\ProjetoFinanceiroAPI\\Padawan.ControleFinanceiro\\Pdawan.ControleFinanceiro.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\joschua.silva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
