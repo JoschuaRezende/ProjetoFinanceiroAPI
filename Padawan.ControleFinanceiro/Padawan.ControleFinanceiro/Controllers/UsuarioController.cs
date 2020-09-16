@@ -22,6 +22,7 @@ namespace Padawan.ControleFinanceiro.Controllers
                 {
                   return Ok("Adicionado com sucesso");
                 }
+                
                 return BadRequest("Já existe login");
             }
             else
@@ -37,12 +38,27 @@ namespace Padawan.ControleFinanceiro.Controllers
         {
             var result = new Util.Usuario();
          
-            if (!result.Lista().Any())
+            if (!result.ListaNomeUsuarios().Any())
             {
                return BadRequest("Não Possui nenhum cadastro de Usuário");
             }
 
-            return Ok(result.Lista());
+            return Ok(result.ListaNomeUsuarios());
+        }
+
+        [HttpGet]
+        [Route("Logar")]
+        public ActionResult GetLogar(string login, string senha)
+        {
+            var result = new Util.Usuario();
+
+         
+            //if (!result.Lista().Any())
+            //{
+            //    return BadRequest("Não Possui nenhum cadastro de Usuário");
+            //}
+
+            return Ok();
         }
 
 

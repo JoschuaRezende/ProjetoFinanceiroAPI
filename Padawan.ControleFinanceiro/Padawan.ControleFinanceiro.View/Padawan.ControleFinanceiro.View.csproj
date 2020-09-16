@@ -6,4 +6,8 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Pdawan.ControleFinanceiro.Model\Padawan.ControleFinanceiro.Model.csproj" />
+  </ItemGroup>
+
 </Project>

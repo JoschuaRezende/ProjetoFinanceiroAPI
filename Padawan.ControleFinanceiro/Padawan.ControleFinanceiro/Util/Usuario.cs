@@ -32,7 +32,7 @@ namespace Padawan.ControleFinanceiro.Util
             return true;
         }
 
-        public List<string> Lista()
+        public List<string> ListaNomeUsuarios()
         {
             return banco.Listar().Select(p => p.Nome).ToList();
         }
