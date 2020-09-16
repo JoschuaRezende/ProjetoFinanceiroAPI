@@ -31,12 +31,12 @@ namespace Padawan.ControleFinanceiro.View
 
             var httpClient = new HttpClient();
 
-            var URL = "https://localhost:44360//Cadastro/Usuario";
+            var URL = "https://localhost:44360/Cadastro/Usuario";
             var result = httpClient.PostAsync($"{URL}", content);
             result.Wait();
 
 
-
+          
 
             this.Close();
         }
