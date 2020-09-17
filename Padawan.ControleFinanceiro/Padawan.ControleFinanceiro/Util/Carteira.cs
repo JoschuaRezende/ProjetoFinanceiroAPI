@@ -19,6 +19,17 @@ namespace Padawan.ControleFinanceiro.Util
             }
             return false;
         }
+
+        //ainda não sei como fazer essa parte 
+
+        //public bool Renomear(string descricao, string novaDescricao, int novoIdBanco, Model.Carteira objeto)
+        //{
+        //    var filtro = use.ListarCategoria().Where(p => p.Descricao == descricao).FirstOrDefault();
+        //    filtro.Descricao = novaDescricao;
+
+        //    use.AtualizarCategoria(filtro);
+        //    return true;
+        //}
     }
 
         

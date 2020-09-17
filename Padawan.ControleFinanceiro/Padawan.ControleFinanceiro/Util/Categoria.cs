@@ -44,7 +44,8 @@ namespace Padawan.ControleFinanceiro.Util
             var filtro = use.ListarCategoria().Where(p => p.Descricao == categoria).FirstOrDefault();
             filtro.Descricao = novaCategoria;
 
-            use.AtualizarCategoria(filtro);
+            use.AtualizarCarteira(filtro);
+
             return true;
         }
     }

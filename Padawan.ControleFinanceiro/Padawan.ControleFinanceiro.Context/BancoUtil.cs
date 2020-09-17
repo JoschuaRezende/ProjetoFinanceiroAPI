@@ -141,5 +141,41 @@ namespace Padawan.ControleFinanceiro.Context
             }
             return true;
         }
+
+        public bool AtualizarCarteira(Categoria objeto)
+        {
+            banco = new BancoContext();
+            List<Carteira> result;
+            using (banco)
+            {
+                banco.Update(objeto);
+                banco.SaveChanges();
+            }
+            return true;
+        }
+
+        public bool AlterarSenha(Usuario objeto)
+        {
+            banco = new BancoContext();
+            List<Carteira> result;
+            using (banco)
+            {
+                banco.Update(objeto);
+                banco.SaveChanges();
+            }
+            return true;
+        }
+
+        public bool AtualizarCarteira(Carteira objeto)
+        {
+            banco = new BancoContext();
+            List<Carteira> result;
+            using (banco)
+            {
+                banco.Update(objeto);
+                banco.SaveChanges();
+            }
+            return true;
+        }
     }
 }

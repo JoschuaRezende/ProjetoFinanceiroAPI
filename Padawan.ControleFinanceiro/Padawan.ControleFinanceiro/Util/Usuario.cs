@@ -53,6 +53,25 @@ namespace Padawan.ControleFinanceiro.Util
         {
            return banco.ListarUsuario();
         }
+
+        public bool AlterarSenha(string usuario, string senha)
+        {
+            var filtro = banco.ListarUsuario().Where(p => p.Login == usuario).FirstOrDefault();
+            filtro.Senha = senha;
+            if (!Senha(filtro))
+            {
+                return false;
+            }
+            
+            banco.AlterarSenha(filtro);
+            return true;
+        }
+
+        public bool ValidaUsuario(string usuario)
+        {
+            return banco.ListarUsuario().Where(p => p.Login == usuario).Any();
+        }
+        
     }
 }
 
