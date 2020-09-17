@@ -129,5 +129,17 @@ namespace Padawan.ControleFinanceiro.Context
             return result;
         }
 
+
+        public bool AtualizarCategoria(Categoria objeto)
+        {
+            banco = new BancoContext();
+            List<Categoria> result;
+            using (banco)
+            {
+                banco.Update(objeto);
+                banco.SaveChanges();
+            }
+            return true;
+        }
     }
 }

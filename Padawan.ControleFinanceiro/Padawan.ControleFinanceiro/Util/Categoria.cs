@@ -38,5 +38,14 @@ namespace Padawan.ControleFinanceiro.Util
             use.Remove(objeto);
             return true;
         }
+
+        public bool Renomear(string categoria, string novaCategoria)
+        {
+            var filtro = use.ListarCategoria().Where(p => p.Descricao == categoria).FirstOrDefault();
+            filtro.Descricao = novaCategoria;
+
+            use.AtualizarCategoria(filtro);
+            return true;
+        }
     }
 }

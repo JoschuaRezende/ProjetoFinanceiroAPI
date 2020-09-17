@@ -42,5 +42,17 @@ namespace Padawan.ControleFinanceiro.Controllers
             }
             return BadRequest("Existe Operações que utilizam a categoria");
         }
+
+        [HttpPut]
+        [Route("Atualizar")]
+        public ActionResult Atualizar(string categoria, string novacategoria)
+        {
+            Util.Categoria u1 = new Util.Categoria();
+
+            u1.Renomear(categoria, novacategoria);
+
+            return Ok("Atualizado com Sucesso");
+            
+        }
     }
 }
