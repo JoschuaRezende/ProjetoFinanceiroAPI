@@ -18,17 +18,24 @@ namespace Padawan.ControleFinanceiro.Util
             return false;
         }
 
-        public bool ValidaCategoriaOperacao()
+        private bool ValidaCategoriaOperacao(Model.Categoria objeto)
         {
-            //validar se existe alguma operacao que esta usando essa categoria;
-            return true;
+
+            if (use.ListaOperacaoes().Any(p => p.IdCategoria == objeto.Id))
+            {
+                return true;
+            }
+            return false;
         }
         public bool Remove(string categoria)
         {
             var objeto = use.ListarCategoria().Where(p => p.Descricao == categoria).FirstOrDefault();
 
+            if (ValidaCategoriaOperacao(objeto))
+            {
+                return false;
+            }
             use.Remove(objeto);
-
             return true;
         }
     }

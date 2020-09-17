@@ -32,6 +32,7 @@ namespace Padawan.ControleFinanceiro.Controllers
         {
             Util.Operacao u1 = new Util.Operacao();
 
+            
             if (u1.Remover(objeto))
             {
                 return Ok();
