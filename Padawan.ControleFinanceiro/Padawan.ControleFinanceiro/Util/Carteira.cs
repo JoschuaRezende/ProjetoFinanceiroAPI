@@ -1,13 +1,10 @@
 ﻿using Padawan.ControleFinanceiro.Context;
-using Padawan.ControleFinanceiro.Interfaces;
 using System.Linq;
 
 
 namespace Padawan.ControleFinanceiro.Util
 {
     public class Carteira {
-
-
 
         BancoUtil<Model.Carteira> use = new BancoUtil<Model.Carteira>();
 
@@ -22,8 +19,6 @@ namespace Padawan.ControleFinanceiro.Util
             }
             return false;
         }
-
-
     }
 
         

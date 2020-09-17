@@ -3,8 +3,9 @@ using Padawan.ControleFinanceiro.Model;
 
 namespace Padawan.ControleFinanceiro.Controllers
 {
-    [Route("Banco")]
     [ApiController]
+    [Route("Banco")]
+    
     public class BancoControllers : ControllerBase
     {
 

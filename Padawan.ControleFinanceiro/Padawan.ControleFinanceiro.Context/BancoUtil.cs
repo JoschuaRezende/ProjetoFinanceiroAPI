@@ -45,12 +45,34 @@ namespace Padawan.ControleFinanceiro.Context
             }
         }
 
-        public void Remove(T objeto)
+        public void Add(Operacao usuario)
         {
             banco = new BancoContext();
             using (banco)
             {
-                banco.Remove(objeto);
+                banco.Operacoes.Add(usuario);
+                banco.SaveChanges();
+            }
+        }
+
+        public void Remove(Operacao objeto)
+        {
+            banco = new BancoContext();
+            using (banco)
+            {
+                banco.Operacoes.Remove(objeto);
+
+                banco.SaveChanges();
+            }
+        }
+
+        public void Remove(Categoria objeto)
+        {
+            banco = new BancoContext();
+            using (banco)
+            {
+                banco.Categorias.Remove(objeto);
+
                 banco.SaveChanges();
             }
         }
@@ -93,6 +115,16 @@ namespace Padawan.ControleFinanceiro.Context
             using (banco)
             {
                 result = banco.Carteiras.ToList();
+            }
+            return result;
+        }
+        public List<Operacao> ListaOperacaoes()
+        {
+            banco = new BancoContext();
+            List<Operacao> result;
+            using (banco)
+            {
+                result = banco.Operacoes.ToList();
             }
             return result;
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -8,17 +9,17 @@ using Padawan.ControleFinanceiro.Model;
 
 namespace Padawan.ControleFinanceiro.Controllers
 {
-    [Route("Categoria")]
     [ApiController]
+    [Route("Categoria")]
+  
     public class CategoriaControllers : ControllerBase
     {
+        Util.Categoria u1 = new Util.Categoria();
 
         [HttpPost]
         [Route("Cadastro")]
         public ActionResult PostBanco(Categoria objeto)
         {
-            Util.Categoria u1 = new Util.Categoria();
-
             var result = u1.Add(objeto);
 
             if (!result)
@@ -27,6 +28,19 @@ namespace Padawan.ControleFinanceiro.Controllers
             }
             return Ok();
 
+        }
+
+        [HttpDelete]
+        [Route("Deletar")]
+        public ActionResult Delete(string objeto)
+        {
+            Util.Categoria u1 = new Util.Categoria();
+    
+            if (u1.Remove(objeto))
+            {
+                return Ok();
+            }
+            return BadRequest();
         }
     }
 }

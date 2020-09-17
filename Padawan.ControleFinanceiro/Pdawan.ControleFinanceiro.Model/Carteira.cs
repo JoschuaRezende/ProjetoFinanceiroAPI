@@ -11,7 +11,7 @@ namespace Padawan.ControleFinanceiro.Model
         }
 
         public int Id { get; set; }
-        public int Descricao { get; set; }
+        public string Descricao { get; set; }
         public int IdBanco { get; set; }
         public double Saldo { get; set; }
 

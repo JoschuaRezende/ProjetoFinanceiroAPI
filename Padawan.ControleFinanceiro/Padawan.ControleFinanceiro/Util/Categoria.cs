@@ -17,5 +17,19 @@ namespace Padawan.ControleFinanceiro.Util
             }
             return false;
         }
+
+        public bool ValidaCategoriaOperacao()
+        {
+            //validar se existe alguma operacao que esta usando essa categoria;
+            return true;
+        }
+        public bool Remove(string categoria)
+        {
+            var objeto = use.ListarCategoria().Where(p => p.Descricao == categoria).FirstOrDefault();
+
+            use.Remove(objeto);
+
+            return true;
+        }
     }
 }
