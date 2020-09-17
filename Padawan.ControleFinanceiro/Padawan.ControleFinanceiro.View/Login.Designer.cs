@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_Login = new System.Windows.Forms.TextBox();
+            this.txt_Senha = new System.Windows.Forms.TextBox();
             this.lbl_Login = new System.Windows.Forms.Label();
             this.lbl_Senha = new System.Windows.Forms.Label();
             this.lbl_CadastrarUsuario = new System.Windows.Forms.Label();
             this.btn_Logar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txt_Login
             // 
-            this.textBox1.Location = new System.Drawing.Point(79, 96);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 23);
-            this.textBox1.TabIndex = 0;
+            this.txt_Login.Location = new System.Drawing.Point(79, 96);
+            this.txt_Login.Name = "txt_Login";
+            this.txt_Login.Size = new System.Drawing.Size(167, 23);
+            this.txt_Login.TabIndex = 0;
             // 
-            // textBox2
+            // txt_Senha
             // 
-            this.textBox2.Location = new System.Drawing.Point(79, 164);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(167, 23);
-            this.textBox2.TabIndex = 0;
+            this.txt_Senha.Location = new System.Drawing.Point(79, 164);
+            this.txt_Senha.Name = "txt_Senha";
+            this.txt_Senha.Size = new System.Drawing.Size(167, 23);
+            this.txt_Senha.TabIndex = 0;
             // 
             // lbl_Login
             // 
@@ -86,6 +86,7 @@
             this.btn_Logar.TabIndex = 4;
             this.btn_Logar.Text = "Logar";
             this.btn_Logar.UseVisualStyleBackColor = true;
+            this.btn_Logar.Click += new System.EventHandler(this.btn_Logar_Click);
             // 
             // Login
             // 
@@ -96,8 +97,8 @@
             this.Controls.Add(this.lbl_CadastrarUsuario);
             this.Controls.Add(this.lbl_Senha);
             this.Controls.Add(this.lbl_Login);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_Senha);
+            this.Controls.Add(this.txt_Login);
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -107,8 +108,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_Login;
+        private System.Windows.Forms.TextBox txt_Senha;
         private System.Windows.Forms.Label lbl_Login;
         private System.Windows.Forms.Label lbl_Senha;
         private System.Windows.Forms.Label lbl_CadastrarUsuario;

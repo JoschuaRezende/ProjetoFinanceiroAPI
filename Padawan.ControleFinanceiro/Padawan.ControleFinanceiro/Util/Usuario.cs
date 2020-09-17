@@ -37,6 +37,18 @@ namespace Padawan.ControleFinanceiro.Util
             return banco.Listar().Select(p => p.Nome).ToList();
         }
 
+        public bool ValidaLogin(string usuario, string senha)
+        {
+            var result = new Util.Usuario();
+
+            if (!result.Listar().Where(p => p.Login == usuario && p.Senha == senha).Any())
+            {
+                return false;
+            }
+            return true;
+
+        }
+
         public List<Model.Usuario> Listar()
         {
            return banco.Listar();

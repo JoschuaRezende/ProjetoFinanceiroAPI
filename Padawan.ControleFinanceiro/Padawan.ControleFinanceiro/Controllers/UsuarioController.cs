@@ -46,17 +46,16 @@ namespace Padawan.ControleFinanceiro.Controllers
             return Ok(result.ListaNomeUsuarios());
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("Logar")]
-        public ActionResult GetLogar(Usuario usuario)
+        public ActionResult GetLogar(string usuario, string senha)
         {
             var result = new Util.Usuario();
-
-            if (!result.Listar().Select(p => p.Login == usuario.Login && p.Senha == usuario.Senha).Any())
+           
+            if (!result.ValidaLogin(usuario, senha))
             {
-                return BadRequest("Não Possui nenhum cadastro de Usuário");
+                return BadRequest();
             }
-
             return Ok();
         }
 

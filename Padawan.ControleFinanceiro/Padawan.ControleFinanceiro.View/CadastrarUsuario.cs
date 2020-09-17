@@ -1,10 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Padawan.ControleFinanceiro.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Net.Http;
 using System.Text;
 using System.Windows.Forms;
@@ -34,10 +30,6 @@ namespace Padawan.ControleFinanceiro.View
             var URL = "https://localhost:44360/Cadastro/Usuario";
             var result = httpClient.PostAsync($"{URL}", content);
             result.Wait();
-
-
-          
-
             this.Close();
         }
     }
