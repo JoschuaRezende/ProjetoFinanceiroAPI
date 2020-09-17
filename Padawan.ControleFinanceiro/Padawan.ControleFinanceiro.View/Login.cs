@@ -25,11 +25,9 @@ namespace Padawan.ControleFinanceiro.View
             string login = txt_Login.Text;
             string senha = txt_Senha.Text;
 
-            var URL = $"https://localhost:44360/Cadastro/Logar?usuario={login}&senha={senha}";
+            var URL = $"https://localhost:44360/Usuario/Logar?usuario={login}&senha={senha}";
             var result = httpClient.GetAsync(URL);
             result.Wait();
-
-         
            
             if (result.Result.IsSuccessStatusCode)
             {

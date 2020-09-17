@@ -5,11 +5,11 @@ using System.Linq;
 namespace Padawan.ControleFinanceiro.Controllers
 {
     [ApiController]
-    [Route("Cadastro")]
+    [Route("Usuario")]
     public class UsuarioController : ControllerBase
     {
         [HttpPost]
-        [Route("Usuario")]
+        [Route("Cadastrar")]
         public ActionResult PostUsuario(Usuario usuario)
         {
             Util.Usuario u1 = new Util.Usuario();
@@ -31,7 +31,7 @@ namespace Padawan.ControleFinanceiro.Controllers
         }
 
         [HttpGet]
-        [Route("Lista")]
+        [Route("Listar")]
         public ActionResult GetListar()
         {
             var result = new Util.Usuario();
@@ -64,51 +64,6 @@ namespace Padawan.ControleFinanceiro.Controllers
                 return BadRequest("Senha invalida para alteração");
             return Ok("senha alterada com sucesso");
         }
-
-
-
-        //[HttpDelete]
-        //[Route("DeleteUsuario")]
-        //public ActionResult Deletar(string usuario)
-        //{
-        //    var validou = banco.Listar().Where(p => p.Login == usuario).Any();
-
-
-
-
-
-
-        //    banco.Remove(p => p.Login == usuario);
-        //    return Ok();
-        //}
-
-        //    [HttpGet]
-        //    [Route("ListaUsuarios")]
-        //    public ActionResult ListaUsuario()
-        //    {
-        //        //  return Ok(banco.Listar());
-        //    }
-
-        //    [HttpPut]
-        //    [Route("Atualizar")]
-        //    public ActionResult Atualizar(string nome, string usuario)
-        //    {
-        //        var objeto = banco.Listar().Where(p => p.Nome == nome).FirstOrDefault();
-        //        //  var list = banco.Busca((p => p.Nome == usuario));
-
-        //        list.Select(p =>
-        //        {
-        //            p.Login = usuario;
-        //            return p;
-        //        });
-
-
-
-        //        // banco.Atualizar(list);
-
-        //        return Ok();
-        //    }
-
-        // }
+        
     }
 }

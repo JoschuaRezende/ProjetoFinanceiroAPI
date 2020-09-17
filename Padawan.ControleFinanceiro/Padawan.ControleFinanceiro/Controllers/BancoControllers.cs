@@ -8,7 +8,6 @@ namespace Padawan.ControleFinanceiro.Controllers
     
     public class BancoControllers : ControllerBase
     {
-
         [HttpPost]
         [Route("Cadastro")]
         public ActionResult PostBanco(Banco usuario)
@@ -16,11 +15,8 @@ namespace Padawan.ControleFinanceiro.Controllers
             Util.Banco u1 = new Util.Banco();
 
              var result = u1.Add(usuario);
-          
             if (!result)
-            {
                 return BadRequest();
-            }
             return Ok();
 
         }

@@ -8,12 +8,8 @@ namespace Padawan.ControleFinanceiro.Context.Types
     {
         public void Configure(EntityTypeBuilder<Carteira> builder)
         {
-
-
             builder.HasKey(q => q.Id);
 
-
-      
         }
     }
 }
