@@ -21,7 +21,6 @@ namespace Padawan.ControleFinanceiro.Controllers
                 {
                   return Ok("Adicionado com sucesso");
                 }
-                
                 return BadRequest("Já existe login");
             }
             else
@@ -35,8 +34,7 @@ namespace Padawan.ControleFinanceiro.Controllers
         public ActionResult GetListar()
         {
             var result = new Util.Usuario();
-         
-            if (!result.ListaNomeUsuarios().Any())
+            if (result.ListaNomeUsuarios().Count == 0)
                return BadRequest("Não Possui nenhum cadastro de Usuário");
             return Ok(result.ListaNomeUsuarios());
         }
@@ -46,7 +44,6 @@ namespace Padawan.ControleFinanceiro.Controllers
         public ActionResult GetLogar(string usuario, string senha)
         {
             var result = new Util.Usuario();
-           
             if (!result.ValidaLogin(usuario, senha))
                 return BadRequest();
             return Ok();
@@ -59,11 +56,9 @@ namespace Padawan.ControleFinanceiro.Controllers
             var result = new Util.Usuario();
             if (!result.ValidaUsuario(usuario))
                 return BadRequest("Usuario Incorreto");
-            
             if (!result.AlterarSenha(usuario, senha))
                 return BadRequest("Senha invalida para alteração");
             return Ok("senha alterada com sucesso");
         }
-        
     }
 }

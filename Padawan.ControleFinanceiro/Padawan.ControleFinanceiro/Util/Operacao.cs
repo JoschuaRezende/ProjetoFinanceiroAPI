@@ -10,24 +10,22 @@ namespace Padawan.ControleFinanceiro.Util
 {
     public class Operacao
     {
-
-        BancoUtil<Operacao> use = new BancoUtil<Operacao>();
+        public readonly BancoUtil<Operacao> context;
+        public Operacao()
+        {
+            context = new BancoUtil<Operacao>();
+        }
 
         private bool Valida(Model.Operacao objeto)
         {
-          
-            if (objeto.Valor == 0)
-            {
-                return false;
-            }
-            return true;
+            return objeto.Valor != 0;
         }
 
         public bool Add(Model.Operacao objeto)
         {
             if (Valida(objeto))
             {
-                use.Add(objeto);
+                context.Add(objeto);
                 return true;
             }
             return false;
@@ -35,11 +33,9 @@ namespace Padawan.ControleFinanceiro.Util
 
         public bool Remover(string descricao)
         {
-           var objeto =  use.ListaOperacaoes().Where(p => p.Descricao == descricao).FirstOrDefault();
-            use.Remove(objeto);
+           var objeto =  context.ListaOperacaoes().Find(p => p.Descricao == descricao);
+            context.Remove(objeto);
             return true;
         }
-
-
     }
 }

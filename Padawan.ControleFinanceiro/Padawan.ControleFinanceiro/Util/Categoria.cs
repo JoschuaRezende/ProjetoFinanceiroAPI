@@ -5,14 +5,19 @@ namespace Padawan.ControleFinanceiro.Util
 {
     public class Categoria
     {
-        //protected BancoContext context = new BancoContext();
-        BancoUtil<Categoria> use = new BancoUtil<Categoria>();
+
+        BancoUtil<Categoria> context;
+        public Categoria()
+        {
+            context = new BancoUtil<Categoria>();
+        }
+            
         public bool Add(Model.Categoria objeto)
         {
-            var retorno = use.ListarCategoria().Where(p => p.Descricao == objeto.Descricao).Any();
+            var retorno = context.ListarCategoria().Where(p => p.Descricao == objeto.Descricao).Any();
             if (!retorno)
             {
-                use.Add(objeto);
+                context.Add(objeto);
                 return true;
             }
             return false;
@@ -21,7 +26,7 @@ namespace Padawan.ControleFinanceiro.Util
         private bool ValidaCategoriaOperacao(Model.Categoria objeto)
         {
 
-            if (use.ListaOperacaoes().Any(p => p.IdCategoria == objeto.Id))
+            if (context.ListaOperacaoes().Any(p => p.IdCategoria == objeto.Id))
             {
                 return true;
             }
@@ -29,22 +34,22 @@ namespace Padawan.ControleFinanceiro.Util
         }
         public bool Remove(string categoria)
         {
-            var objeto = use.ListarCategoria().Where(p => p.Descricao == categoria).FirstOrDefault();
+            var objeto = context.ListarCategoria().Where(p => p.Descricao == categoria).FirstOrDefault();
 
             if (ValidaCategoriaOperacao(objeto))
             {
                 return false;
             }
-            use.Remove(objeto);
+            context.Remove(objeto);
             return true;
         }
 
         public bool Renomear(string categoria, string novaCategoria)
         {
-            var filtro = use.ListarCategoria().Where(p => p.Descricao == categoria).FirstOrDefault();
+            var filtro = context.ListarCategoria().Where(p => p.Descricao == categoria).FirstOrDefault();
             filtro.Descricao = novaCategoria;
 
-            use.AtualizarCarteira(filtro);
+            context.AtualizarCarteira(filtro);
 
             return true;
         }

@@ -2,6 +2,7 @@
 using Padawan.ControleFinanceiro.Model;
 using System;
 using System.Net.Http;
+using System.Security.Policy;
 using System.Text;
 using System.Windows.Forms;
 
@@ -14,9 +15,10 @@ namespace Padawan.ControleFinanceiro.View
             InitializeComponent();
         }
 
-        private void btn_Cadastrar_Click(object sender, EventArgs e)
+        private void Btn_Cadastrar_Click(object sender, EventArgs e)
         {
-            var user = new Usuario { 
+            const string URL = "https://localhost:44360/Usuario/Cadastrar";
+            var user = new Usuario {
                Login = txt_Login.Text,
                Nome = txt_Nome.Text,
                Senha = txt_Senha.Text
@@ -27,8 +29,7 @@ namespace Padawan.ControleFinanceiro.View
 
             var httpClient = new HttpClient();
 
-            var URL = "https://localhost:44360/Usuario/Cadastrar";
-            var result = httpClient.PostAsync($"{URL}", content);
+            var result = httpClient.PostAsync(URL, content);
             result.Wait();
             this.Close();
         }

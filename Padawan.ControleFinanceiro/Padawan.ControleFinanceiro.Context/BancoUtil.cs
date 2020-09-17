@@ -1,8 +1,5 @@
 ﻿using Padawan.ControleFinanceiro.Model;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Data.Common;
 using System.Linq;
 
 namespace Padawan.ControleFinanceiro.Context
@@ -44,6 +41,8 @@ namespace Padawan.ControleFinanceiro.Context
                 banco.SaveChanges();
             }
         }
+
+    
 
         public void Add(Operacao usuario)
         {
@@ -129,7 +128,6 @@ namespace Padawan.ControleFinanceiro.Context
             return result;
         }
 
-
         public bool AtualizarCategoria(Categoria objeto)
         {
             banco = new BancoContext();
@@ -140,6 +138,16 @@ namespace Padawan.ControleFinanceiro.Context
                 banco.SaveChanges();
             }
             return true;
+        }
+        public bool AtualizarBanco(Banco filtro)
+        {
+            banco = new BancoContext();
+            using (banco)
+            {
+                banco.Update(filtro);
+                banco.SaveChanges();
+                return true;
+            }
         }
 
         public bool AtualizarCarteira(Categoria objeto)

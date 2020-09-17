@@ -6,7 +6,6 @@ namespace Padawan.ControleFinanceiro.Controllers
 {
     [ApiController]
     [Route("Operacao")]
-   
     public class OperacaoControllers : ControllerBase
     {
         [HttpPost]
@@ -23,7 +22,6 @@ namespace Padawan.ControleFinanceiro.Controllers
                 return BadRequest();
             }
             return Ok();
-
         }
 
         [HttpDelete]
@@ -31,8 +29,6 @@ namespace Padawan.ControleFinanceiro.Controllers
         public ActionResult Delete(string objeto)
         {
             Util.Operacao u1 = new Util.Operacao();
-
-            
             if (u1.Remover(objeto))
             {
                 return Ok();

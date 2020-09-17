@@ -12,13 +12,13 @@ namespace Padawan.ControleFinanceiro.View
             InitializeComponent();
         }
 
-        private void lbl_CadastrarUsuario_Click(object sender, EventArgs e)
+        private void Lbl_CadastrarUsuario_Click(object sender, EventArgs e)
         {
             var forms = new CadastrarUsuario();
             forms.ShowDialog();
         }
 
-        private void btn_Logar_Click(object sender, EventArgs e)
+        private void Btn_Logar_Click(object sender, EventArgs e)
         {
             var httpClient = new HttpClient();
 
@@ -28,7 +28,6 @@ namespace Padawan.ControleFinanceiro.View
             var URL = $"https://localhost:44360/Usuario/Logar?usuario={login}&senha={senha}";
             var result = httpClient.GetAsync(URL);
             result.Wait();
-           
             if (result.Result.IsSuccessStatusCode)
             {
                 var principal = new Principal();

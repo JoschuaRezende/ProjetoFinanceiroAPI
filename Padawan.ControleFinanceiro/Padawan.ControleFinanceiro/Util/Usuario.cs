@@ -7,14 +7,17 @@ namespace Padawan.ControleFinanceiro.Util
 {
     public class Usuario
     {
-        BancoUtil<Model.Usuario> banco = new BancoUtil<Model.Usuario>();
-       
+        public readonly BancoUtil<Model.Usuario> context;
+        public Usuario()
+        {
+            context = new BancoUtil<Model.Usuario>();
+        }
         public bool Valida(Model.Usuario usuario)
         {
-            var retorno = banco.ListarUsuario().Where(p => p.Login == usuario.Login).Any();
+            var retorno = context.ListarUsuario().Any(p => p.Login == usuario.Login);
             if (!retorno)
             {
-               banco.Add(usuario);
+               context.Add(usuario);
                return true;
             }
             return false;
@@ -25,53 +28,48 @@ namespace Padawan.ControleFinanceiro.Util
             Regex rx = new Regex(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$");
             var retorno = rx.IsMatch(usuario.Senha);
 
-            if (!retorno)
-            {
-                return false;
-            }
-            return true;
+            return retorno;
         }
 
         public List<string> ListaNomeUsuarios()
         {
-            return banco.ListarUsuario().Select(p => p.Nome).ToList();
+            return context.ListarUsuario().Select(p => p.Nome).ToList();
+        }
+
+        public int RetornaIdNome(string usuario)
+        {
+            var objeto = context.ListarUsuario().First(p => p.Nome == usuario);
+            return objeto.Id;
         }
 
         public bool ValidaLogin(string usuario, string senha)
         {
             var result = new Util.Usuario();
 
-            if (!result.Listar().Where(p => p.Login == usuario && p.Senha == senha).Any())
-            {
-                return false;
-            }
-            return true;
-
+            return result.Listar().Any(p => p.Login == usuario && p.Senha == senha);
         }
 
         public List<Model.Usuario> Listar()
         {
-           return banco.ListarUsuario();
+           return context.ListarUsuario();
         }
 
         public bool AlterarSenha(string usuario, string senha)
         {
-            var filtro = banco.ListarUsuario().Where(p => p.Login == usuario).FirstOrDefault();
+            var filtro = context.ListarUsuario().Find(p => p.Login == usuario);
             filtro.Senha = senha;
             if (!Senha(filtro))
             {
                 return false;
             }
-            
-            banco.AlterarSenha(filtro);
+            context.AlterarSenha(filtro);
             return true;
         }
 
         public bool ValidaUsuario(string usuario)
         {
-            return banco.ListarUsuario().Where(p => p.Login == usuario).Any();
+            return context.ListarUsuario().Any(p => p.Login == usuario);
         }
-        
     }
 }
 

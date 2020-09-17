@@ -1,20 +1,22 @@
 ﻿using Padawan.ControleFinanceiro.Context;
 using System.Linq;
 
-
 namespace Padawan.ControleFinanceiro.Util
 {
     public class Carteira {
+        public readonly BancoUtil<Model.Carteira> context;
 
-        BancoUtil<Model.Carteira> use = new BancoUtil<Model.Carteira>();
+        public Carteira()
+        {
+            context = new BancoUtil<Model.Carteira>();
+        }
 
         public bool Add(Model.Carteira objeto)
         {
-
-            var retorno = use.ListarCarteira().Where(p => p.Descricao == objeto.Descricao).Any();
+            var retorno = context.ListarCarteira().Any(p => p.Descricao == objeto.Descricao);
             if (!retorno)
             {
-                use.Add(objeto);
+                context.Add(objeto);
                 return true;
             }
             return false;
@@ -31,9 +33,6 @@ namespace Padawan.ControleFinanceiro.Util
         //    return true;
         //}
     }
-
-        
-
 
     //{
     //    private const string caminho = @"C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\";
@@ -70,7 +69,6 @@ namespace Padawan.ControleFinanceiro.Util
     //    return result;
     //}
 
-
     //    public double CalcularDebitos()
     //    {
     //        double result = 0;
@@ -102,8 +100,6 @@ namespace Padawan.ControleFinanceiro.Util
     //        }
     //        return result;
     //    }
-
-
 
     //    //public void Add(IOperacao operacao)
     //    //{

@@ -76,7 +76,7 @@
             this.lbl_CadastrarUsuario.Size = new System.Drawing.Size(125, 15);
             this.lbl_CadastrarUsuario.TabIndex = 3;
             this.lbl_CadastrarUsuario.Text = "Cadastar novo usuario";
-            this.lbl_CadastrarUsuario.Click += new System.EventHandler(this.lbl_CadastrarUsuario_Click);
+            this.lbl_CadastrarUsuario.Click += new System.EventHandler(this.Lbl_CadastrarUsuario_Click);
             // 
             // btn_Logar
             // 
@@ -86,7 +86,7 @@
             this.btn_Logar.TabIndex = 4;
             this.btn_Logar.Text = "Logar";
             this.btn_Logar.UseVisualStyleBackColor = true;
-            this.btn_Logar.Click += new System.EventHandler(this.btn_Logar_Click);
+            this.btn_Logar.Click += new System.EventHandler(this.Btn_Logar_Click);
             // 
             // Login
             // 

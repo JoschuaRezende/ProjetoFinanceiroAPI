@@ -1,22 +1,37 @@
-﻿using Padawan.ControleFinanceiro.Context;
+﻿using Microsoft.AspNetCore.Builder;
+using Padawan.ControleFinanceiro.Context;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+
 namespace Padawan.ControleFinanceiro.Util
 
 {
     public class Banco
     {
-
-        BancoUtil<Banco> use = new BancoUtil<Banco>();
-
+        public readonly BancoUtil<Banco> context;
+        public Banco()
+        {
+         context = new BancoUtil<Banco>();
+        }
         public bool Add(Model.Banco banco)
         {
-            var retorno = use.ListarBanco().Where(p => p.Descricao == banco.Descricao).Any();
+            var retorno = context.ListarBanco().Any(p => p.Descricao == banco.Descricao);
             if (!retorno)
             {
-                use.Add(banco);
+                context.Add(banco);
                 return true;
             }
             return false;
+        }
+        public bool Renomear(string descricao, string usuario, string novadescricao)
+        {
+            var filtro = context.ListarBanco().Find(p => p.Descricao == descricao);
+
+            var usuarioId = new Util.Usuario();
+            filtro.Descricao = novadescricao;
+            filtro.IdUsuario = usuarioId.RetornaIdNome(usuario);
+
+            return context.AtualizarBanco(filtro);
         }
     }
 }

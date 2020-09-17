@@ -34,7 +34,4 @@ namespace Padawan.ControleFinanceiro.Context
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Banco> Bancos { get; set; }
     }
-
-
- 
 }

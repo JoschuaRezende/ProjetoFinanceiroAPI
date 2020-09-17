@@ -13,7 +13,6 @@ namespace Padawan.ControleFinanceiro.Controllers
 
     public class CarteiraControllers : ControllerBase
     {
-
         [HttpPost]
         [Route("Cadastro")]
         public ActionResult PostBanco(Carteira objeto)
@@ -27,7 +26,6 @@ namespace Padawan.ControleFinanceiro.Controllers
                 return BadRequest();
             }
             return Ok();
-
         }
     }
 }

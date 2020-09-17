@@ -1,33 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Padawan.ControleFinanceiro.Model;
 
 namespace Padawan.ControleFinanceiro.Controllers
 {
     [ApiController]
     [Route("Categoria")]
-  
     public class CategoriaControllers : ControllerBase
     {
-        Util.Categoria u1 = new Util.Categoria();
+        public readonly Util.Categoria categoria;
+
+        public CategoriaControllers()
+        {
+            categoria = new Util.Categoria();
+        }
 
         [HttpPost]
         [Route("Cadastro")]
         public ActionResult PostBanco(Categoria objeto)
         {
-            var result = u1.Add(objeto);
+            var result = categoria.Add(objeto);
 
             if (!result)
             {
                 return BadRequest();
             }
             return Ok();
-
         }
 
         [HttpDelete]
@@ -35,7 +32,6 @@ namespace Padawan.ControleFinanceiro.Controllers
         public ActionResult Delete(string objeto)
         {
             Util.Categoria u1 = new Util.Categoria();
-    
             if (u1.Remove(objeto))
             {
                 return Ok();
@@ -52,7 +48,6 @@ namespace Padawan.ControleFinanceiro.Controllers
             u1.Renomear(categoria, novacategoria);
 
             return Ok("Atualizado com Sucesso");
-            
         }
     }
 }
