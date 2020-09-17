@@ -36,6 +36,11 @@ namespace Padawan.ControleFinanceiro.Util
         {
             return banco.Listar().Select(p => p.Nome).ToList();
         }
+
+        public List<Model.Usuario> Listar()
+        {
+           return banco.Listar();
+        }
     }
 }
 
