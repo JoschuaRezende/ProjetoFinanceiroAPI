@@ -30,6 +30,7 @@
         {
             this.btn_EditarLogin = new System.Windows.Forms.Button();
             this.btn_Financeiro = new System.Windows.Forms.Button();
+            this.btn_CadastroBanco = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_EditarLogin
@@ -43,18 +44,29 @@
             // 
             // btn_Financeiro
             // 
-            this.btn_Financeiro.Location = new System.Drawing.Point(40, 12);
+            this.btn_Financeiro.Location = new System.Drawing.Point(213, 12);
             this.btn_Financeiro.Name = "btn_Financeiro";
             this.btn_Financeiro.Size = new System.Drawing.Size(172, 105);
             this.btn_Financeiro.TabIndex = 0;
             this.btn_Financeiro.Text = "Operações Financeiras";
             this.btn_Financeiro.UseVisualStyleBackColor = true;
+            this.btn_Financeiro.Click += new System.EventHandler(this.btn_Financeiro_Click);
+            // 
+            // btn_CadastroBanco
+            // 
+            this.btn_CadastroBanco.Location = new System.Drawing.Point(12, 18);
+            this.btn_CadastroBanco.Name = "btn_CadastroBanco";
+            this.btn_CadastroBanco.Size = new System.Drawing.Size(75, 23);
+            this.btn_CadastroBanco.TabIndex = 1;
+            this.btn_CadastroBanco.Text = "Bancos";
+            this.btn_CadastroBanco.UseVisualStyleBackColor = true;
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_CadastroBanco);
             this.Controls.Add(this.btn_EditarLogin);
             this.Controls.Add(this.btn_Financeiro);
             this.Name = "Principal";
@@ -67,5 +79,6 @@
 
         private System.Windows.Forms.Button btn_EditarLogin;
         private System.Windows.Forms.Button btn_Financeiro;
+        private System.Windows.Forms.Button btn_CadastroBanco;
     }
 }

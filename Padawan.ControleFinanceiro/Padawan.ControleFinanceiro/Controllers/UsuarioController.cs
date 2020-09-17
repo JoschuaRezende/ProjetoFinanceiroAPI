@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Padawan.ControleFinanceiro.Context;
 using Padawan.ControleFinanceiro.Model;
 using System.Linq;
 
@@ -29,7 +28,6 @@ namespace Padawan.ControleFinanceiro.Controllers
             {
                 return BadRequest("Senha Fraca");
             }
-          
         }
 
         [HttpGet]

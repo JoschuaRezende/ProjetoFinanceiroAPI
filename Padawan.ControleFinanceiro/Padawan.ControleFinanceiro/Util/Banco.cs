@@ -1,24 +1,22 @@
-﻿using Padawan.ControleFinanceiro.Model;
+﻿using Padawan.ControleFinanceiro.Context;
+using System.Linq;
 namespace Padawan.ControleFinanceiro.Util
 
 {
     public class Banco
     {
-        private readonly Model.Banco banco;
-        public Banco(Model.Banco c)
+
+        BancoUtil<Banco> use = new BancoUtil<Banco>();
+
+        public bool Add(Model.Banco banco)
         {
-            banco = c;
+            var retorno = use.ListarBanco().Where(p => p.Descricao == banco.Descricao).Any();
+            if (!retorno)
+            {
+                use.Add(banco);
+                return true;
+            }
+            return false;
         }
-
-        public void Criar(string descricao, int id)
-        {
-            banco.Id = id;
-            banco.Descricao = descricao;
-          
-        }
-
-
-
-      
     }
 }

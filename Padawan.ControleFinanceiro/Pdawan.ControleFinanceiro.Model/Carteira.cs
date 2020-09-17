@@ -11,8 +11,11 @@ namespace Padawan.ControleFinanceiro.Model
         }
 
         public int Id { get; set; }
+        public int Descricao { get; set; }
         public int IdBanco { get; set; }
         public double Saldo { get; set; }
+
+
         public virtual Banco Banco { get; set; }
 
         public virtual ICollection<Operacao> Operacoes { get; set; }

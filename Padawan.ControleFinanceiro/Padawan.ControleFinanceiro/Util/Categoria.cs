@@ -1,17 +1,21 @@
 ﻿using Padawan.ControleFinanceiro.Context;
+using System.Linq;
 
 namespace Padawan.ControleFinanceiro.Util
 {
     public class Categoria
     {
         //protected BancoContext context = new BancoContext();
-        
-        public void Criar(string descricao)
+        BancoUtil<Categoria> use = new BancoUtil<Categoria>();
+        public bool Add(Model.Categoria objeto)
         {
-            var categoria = new Padawan.ControleFinanceiro.Model.Categoria();
-            categoria.Descricao = descricao;
-
-
+            var retorno = use.ListarCategoria().Where(p => p.Descricao == objeto.Descricao).Any();
+            if (!retorno)
+            {
+                use.Add(objeto);
+                return true;
+            }
+            return false;
         }
     }
 }

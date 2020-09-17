@@ -92,7 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 450);
+            this.ClientSize = new System.Drawing.Size(320, 339);
             this.Controls.Add(this.btn_Logar);
             this.Controls.Add(this.lbl_CadastrarUsuario);
             this.Controls.Add(this.lbl_Senha);

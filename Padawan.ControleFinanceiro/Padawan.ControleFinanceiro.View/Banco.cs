@@ -8,17 +8,11 @@ using System.Windows.Forms;
 
 namespace Padawan.ControleFinanceiro.View
 {
-    public partial class Principal : Form
+    public partial class Banco : Form
     {
-        public Principal()
+        public Banco()
         {
             InitializeComponent();
-        }
-
-        private void btn_Financeiro_Click(object sender, EventArgs e)
-        {
-            var operacaofinanceira = new OperacaoFinanceira();
-            operacaofinanceira.ShowDialog();
         }
     }
 }

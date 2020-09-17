@@ -15,22 +15,32 @@ namespace Padawan.ControleFinanceiro.Context
         {
         }
 
-        //public void Add(T objeto)
-        //{
-        //    banco = new BancoContext();
-        //    using (banco)
-        //    {
-        //        banco.GetType(obje;
-        //        banco.SaveChanges();
-        //    }
-        //}
-
-        public void Add(Usuario usuario)
+        public void Add(T usuario)
         {
             banco = new BancoContext();
             using (banco)
             {
-                banco.Usuarios.Add(usuario);
+                banco.Add(usuario);
+                banco.SaveChanges();
+            }
+        }
+
+        public void Add(Banco usuario)
+        {
+            banco = new BancoContext();
+            using (banco)
+            {
+                banco.Bancos.Add(usuario);
+                banco.SaveChanges();
+            }
+        }
+
+        public void Add(Categoria usuario)
+        {
+            banco = new BancoContext();
+            using (banco)
+            {
+                banco.Categorias.Add(usuario);
                 banco.SaveChanges();
             }
         }
@@ -45,13 +55,44 @@ namespace Padawan.ControleFinanceiro.Context
             }
         }
 
-        public List<Usuario> Listar()
+        public List<Usuario> ListarUsuario()
         {
             banco = new BancoContext();
             List<Usuario> result;
             using (banco)
             {
                result = banco.Usuarios.ToList();
+            }
+            return result;
+        }
+        public List<Banco> ListarBanco()
+        {
+            banco = new BancoContext();
+            List<Banco> result;
+            using (banco)
+            {
+                result = banco.Bancos.ToList();
+            }
+            return result;
+        }
+        public List<Categoria> ListarCategoria()
+        {
+            banco = new BancoContext();
+            List<Categoria> result;
+            using (banco)
+            {
+                result = banco.Categorias.ToList();
+            }
+            return result;
+        }
+
+        public List<Carteira> ListarCarteira()
+        {
+            banco = new BancoContext();
+            List<Carteira> result;
+            using (banco)
+            {
+                result = banco.Carteiras.ToList();
             }
             return result;
         }

@@ -1,44 +1,68 @@
-﻿using Padawan.ControleFinanceiro.Interfaces;
+﻿using Padawan.ControleFinanceiro.Context;
+using Padawan.ControleFinanceiro.Interfaces;
 using System.Linq;
 
 
 namespace Padawan.ControleFinanceiro.Util
 {
-    //public class Carteira
+    public class Carteira {
+
+
+
+        BancoUtil<Model.Carteira> use = new BancoUtil<Model.Carteira>();
+
+        public bool Add(Model.Carteira objeto)
+        {
+
+            var retorno = use.ListarCarteira().Where(p => p.Descricao == objeto.Descricao).Any();
+            if (!retorno)
+            {
+                use.Add(objeto);
+                return true;
+            }
+            return false;
+        }
+
+
+    }
+
+        
+
+
     //{
     //    private const string caminho = @"C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\";
     //    private const string arquivoNome = "BancoFinanceiro.db";
 
-        //public void Criar()
-        //{
-        //    var carteira = new Pdawan.ControleFinanceiro.Model.Carteira();
-        //    carteira.Saldo = CalcularSaldo();
-            
-        //}
-       
-        //public double CalcularSaldo()
-        //{
-        //    double result = 0;
+    //public void Criar()
+    //{
+    //    var carteira = new Pdawan.ControleFinanceiro.Model.Carteira();
+    //    carteira.Saldo = CalcularSaldo();
 
-        //    using (var db = new LiteDatabase(caminho + arquivoNome))
-        //    {
-        //        var teste = db.GetCollection<IOperacao>();
-        //        var colecao = teste.FindAll();
+    //}
 
-        //        colecao.ToList().ForEach(p =>
-        //        {
-        //            if (p is Debito)
-        //            {
-        //                result -= p.Valor;
-        //            }
-        //            if (p is Credito)
-        //            {
-        //                result += p.Valor;
-        //            }
-        //        });
-        //    }
-        //    return result;
-        //}
+    //public double CalcularSaldo()
+    //{
+    //    double result = 0;
+
+    //    using (var db = new LiteDatabase(caminho + arquivoNome))
+    //    {
+    //        var teste = db.GetCollection<IOperacao>();
+    //        var colecao = teste.FindAll();
+
+    //        colecao.ToList().ForEach(p =>
+    //        {
+    //            if (p is Debito)
+    //            {
+    //                result -= p.Valor;
+    //            }
+    //            if (p is Credito)
+    //            {
+    //                result += p.Valor;
+    //            }
+    //        });
+    //    }
+    //    return result;
+    //}
 
 
     //    public double CalcularDebitos()

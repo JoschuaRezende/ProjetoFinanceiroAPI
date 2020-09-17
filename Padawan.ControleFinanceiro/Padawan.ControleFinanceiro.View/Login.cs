@@ -28,6 +28,9 @@ namespace Padawan.ControleFinanceiro.View
             var URL = $"https://localhost:44360/Cadastro/Logar?usuario={login}&senha={senha}";
             var result = httpClient.GetAsync(URL);
             result.Wait();
+
+         
+           
             if (result.Result.IsSuccessStatusCode)
             {
                 var principal = new Principal();
@@ -36,12 +39,8 @@ namespace Padawan.ControleFinanceiro.View
             }
             else
             {
-               
                 MessageBox.Show("Login ou senha Incorreto");
             }
-
-           
-
         }
     }
 }

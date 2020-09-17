@@ -7,11 +7,11 @@ namespace Padawan.ControleFinanceiro.Util
 {
     public class Usuario
     {
-        BancoUtil<Usuario> banco = new BancoUtil<Usuario>();
-        private BancoContext abertura = new BancoContext();
+        BancoUtil<Model.Usuario> banco = new BancoUtil<Model.Usuario>();
+       
         public bool Valida(Model.Usuario usuario)
         {
-            var retorno = banco.Listar().Where(p => p.Login == usuario.Login).Any();
+            var retorno = banco.ListarUsuario().Where(p => p.Login == usuario.Login).Any();
             if (!retorno)
             {
                banco.Add(usuario);
@@ -34,7 +34,7 @@ namespace Padawan.ControleFinanceiro.Util
 
         public List<string> ListaNomeUsuarios()
         {
-            return banco.Listar().Select(p => p.Nome).ToList();
+            return banco.ListarUsuario().Select(p => p.Nome).ToList();
         }
 
         public bool ValidaLogin(string usuario, string senha)
@@ -51,7 +51,7 @@ namespace Padawan.ControleFinanceiro.Util
 
         public List<Model.Usuario> Listar()
         {
-           return banco.Listar();
+           return banco.ListarUsuario();
         }
     }
 }
