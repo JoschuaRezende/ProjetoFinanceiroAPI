@@ -23,10 +23,10 @@ namespace Padawan.ControleFinanceiro.Util
             return false;
         }
 
-        public bool Senha(Model.Usuario usuario)
+        public bool Senha(string senha)
         {
             Regex rx = new Regex(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$");
-            var retorno = rx.IsMatch(usuario.Senha);
+            var retorno = rx.IsMatch(senha);
 
             return retorno;
         }
@@ -58,7 +58,7 @@ namespace Padawan.ControleFinanceiro.Util
         {
             var filtro = context.ListarUsuario().Find(p => p.Login == usuario);
             filtro.Senha = senha;
-            if (!Senha(filtro))
+            if (!Senha(filtro.Senha))
             {
                 return false;
             }

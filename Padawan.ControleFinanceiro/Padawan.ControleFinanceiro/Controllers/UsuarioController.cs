@@ -12,7 +12,8 @@ namespace Padawan.ControleFinanceiro.Controllers
         public ActionResult PostUsuario(Usuario usuario)
         {
             Util.Usuario u1 = new Util.Usuario();
-            var result = u1.Senha(usuario);
+            var result = u1.Senha(usuario.Senha);
+
             if (result)
             {
                 var result2 = u1.Valida(usuario);

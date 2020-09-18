@@ -1,10 +1,4 @@
 ﻿using Padawan.ControleFinanceiro.Context;
-using Padawan.ControleFinanceiro.Interfaces;
-using Padawan.ControleFinanceiro.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 
 namespace Padawan.ControleFinanceiro.Util
 {

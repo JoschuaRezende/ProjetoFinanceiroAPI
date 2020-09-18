@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Padawan.ControleFinanceiro.Context;
+﻿using Padawan.ControleFinanceiro.Context;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Padawan.ControleFinanceiro.Util
 
