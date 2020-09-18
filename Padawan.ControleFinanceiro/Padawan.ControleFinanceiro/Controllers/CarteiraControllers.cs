@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Padawan.ControleFinanceiro.Model;
 
 namespace Padawan.ControleFinanceiro.Controllers
@@ -18,7 +13,7 @@ namespace Padawan.ControleFinanceiro.Controllers
         public ActionResult PostBanco(Carteira objeto)
         {
             Util.Carteira u1 = new Util.Carteira();
-
+            objeto.Saldo = 0;
             var result = u1.Add(objeto);
 
             if (!result)
@@ -26,6 +21,16 @@ namespace Padawan.ControleFinanceiro.Controllers
                 return BadRequest();
             }
             return Ok();
+        }
+
+        [HttpPost]
+        [Route("Saldo")]
+        public ActionResult GetSaldo(string descricao)
+        {
+            Util.Carteira u1 = new Util.Carteira();
+            var saldo =  u1.AtualizarSaldo(u1.CalcularSaldo(descricao), descricao);
+
+            return Ok("Saldo calculado com sucesso");
         }
     }
 }

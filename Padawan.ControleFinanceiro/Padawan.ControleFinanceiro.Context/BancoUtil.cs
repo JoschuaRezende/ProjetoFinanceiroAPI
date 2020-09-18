@@ -139,6 +139,18 @@ namespace Padawan.ControleFinanceiro.Context
             }
             return true;
         }
+
+        public bool AtualizarSaldoCarteira(Carteira carteira)
+        {
+            banco = new BancoContext();
+            
+            using (banco)
+            {
+                banco.Update(carteira);
+                banco.SaveChanges();
+            }
+            return true;
+        }
         public bool AtualizarBanco(Banco filtro)
         {
             banco = new BancoContext();

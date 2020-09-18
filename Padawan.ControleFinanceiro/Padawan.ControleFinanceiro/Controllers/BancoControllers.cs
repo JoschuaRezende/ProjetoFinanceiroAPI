@@ -25,7 +25,7 @@ namespace Padawan.ControleFinanceiro.Controllers
         }
         [HttpPut]
         [Route("Atualizar")]
-        public ActionResult Delete(string descricao, string usuario, string novadescricao)
+        public ActionResult Atualizar(string descricao, string usuario, string novadescricao)
         {
             if (context.Renomear(descricao, usuario, novadescricao))
             {
