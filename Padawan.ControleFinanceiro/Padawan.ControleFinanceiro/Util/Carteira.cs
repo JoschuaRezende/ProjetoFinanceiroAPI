@@ -23,14 +23,16 @@ namespace Padawan.ControleFinanceiro.Util
             return false;
         }
 
-        public double AtualizarSaldo(double valor, string descricao)
+        public bool AtualizarSaldo(double valor, string descricao)
         {
             var objeto = context.ListarCarteira().Find(p => p.Descricao == descricao);
-
-            objeto.Saldo = valor;
-            context.AtualizarCarteira(objeto);
-
-            return valor;
+            if (objeto != null)
+            {
+                objeto.Saldo = valor;
+                context.AtualizarCarteira(objeto);
+                return true;
+            }
+            return false;
         }
 
         public double CalcularSaldo(string descricao)

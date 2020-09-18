@@ -5,16 +5,14 @@ namespace Padawan.ControleFinanceiro.Util
 {
     public class Categoria
     {
-
-        BancoUtil<Categoria> context;
+        private readonly BancoUtil<Categoria> context;
         public Categoria()
         {
             context = new BancoUtil<Categoria>();
         }
-            
         public bool Add(Model.Categoria objeto)
         {
-            var retorno = context.ListarCategoria().Where(p => p.Descricao == objeto.Descricao).Any();
+            var retorno = context.ListarCategoria().Any(p => p.Descricao == objeto.Descricao);
             if (!retorno)
             {
                 context.Add(objeto);
@@ -25,16 +23,11 @@ namespace Padawan.ControleFinanceiro.Util
 
         private bool ValidaCategoriaOperacao(Model.Categoria objeto)
         {
-
-            if (context.ListaOperacaoes().Any(p => p.IdCategoria == objeto.Id))
-            {
-                return true;
-            }
-            return false;
+            return context.ListaOperacaoes().Any(p => p.IdCategoria == objeto.Id);
         }
         public bool Remove(string categoria)
         {
-            var objeto = context.ListarCategoria().Where(p => p.Descricao == categoria).FirstOrDefault();
+            var objeto = context.ListarCategoria().Find(p => p.Descricao == categoria);
 
             if (ValidaCategoriaOperacao(objeto))
             {
@@ -46,7 +39,7 @@ namespace Padawan.ControleFinanceiro.Util
 
         public bool Renomear(string categoria, string novaCategoria)
         {
-            var filtro = context.ListarCategoria().Where(p => p.Descricao == categoria).FirstOrDefault();
+            var filtro = context.ListarCategoria().Find(p => p.Descricao == categoria);
             filtro.Descricao = novaCategoria;
 
             context.AtualizarCarteira(filtro);

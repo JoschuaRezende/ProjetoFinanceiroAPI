@@ -28,9 +28,12 @@ namespace Padawan.ControleFinanceiro.Controllers
         public ActionResult GetSaldo(string descricao)
         {
             Util.Carteira u1 = new Util.Carteira();
-            var saldo =  u1.AtualizarSaldo(u1.CalcularSaldo(descricao), descricao);
 
-            return Ok("Saldo calculado com sucesso");
+            if (u1.AtualizarSaldo(u1.CalcularSaldo(descricao), descricao))
+            {
+                return Ok("Saldo calculado com sucesso");
+            }
+            return BadRequest();
         }
     }
 }

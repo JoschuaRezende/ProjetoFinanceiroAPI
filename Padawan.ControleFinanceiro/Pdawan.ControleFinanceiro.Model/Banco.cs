@@ -12,7 +12,5 @@ namespace Padawan.ControleFinanceiro.Model
         public virtual Usuario Usuario { get; set; }
 
         public virtual ICollection<Carteira> Carteiras { get; set; }
-      
-
     }
 }

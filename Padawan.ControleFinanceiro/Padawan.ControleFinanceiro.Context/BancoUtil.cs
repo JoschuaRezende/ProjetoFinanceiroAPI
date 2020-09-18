@@ -42,8 +42,6 @@ namespace Padawan.ControleFinanceiro.Context
             }
         }
 
-    
-
         public void Add(Operacao usuario)
         {
             banco = new BancoContext();
@@ -131,7 +129,7 @@ namespace Padawan.ControleFinanceiro.Context
         public bool AtualizarCategoria(Categoria objeto)
         {
             banco = new BancoContext();
-            List<Categoria> result;
+
             using (banco)
             {
                 banco.Update(objeto);
@@ -143,7 +141,6 @@ namespace Padawan.ControleFinanceiro.Context
         public bool AtualizarSaldoCarteira(Carteira carteira)
         {
             banco = new BancoContext();
-            
             using (banco)
             {
                 banco.Update(carteira);
@@ -165,7 +162,6 @@ namespace Padawan.ControleFinanceiro.Context
         public bool AtualizarCarteira(Categoria objeto)
         {
             banco = new BancoContext();
-            List<Carteira> result;
             using (banco)
             {
                 banco.Update(objeto);
@@ -177,7 +173,6 @@ namespace Padawan.ControleFinanceiro.Context
         public bool AlterarSenha(Usuario objeto)
         {
             banco = new BancoContext();
-            List<Carteira> result;
             using (banco)
             {
                 banco.Update(objeto);
@@ -189,7 +184,6 @@ namespace Padawan.ControleFinanceiro.Context
         public bool AtualizarCarteira(Carteira objeto)
         {
             banco = new BancoContext();
-            List<Carteira> result;
             using (banco)
             {
                 banco.Update(objeto);

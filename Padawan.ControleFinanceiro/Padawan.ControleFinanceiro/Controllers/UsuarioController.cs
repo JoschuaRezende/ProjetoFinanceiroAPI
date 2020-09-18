@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Padawan.ControleFinanceiro.Model;
-using System.Linq;
 
 namespace Padawan.ControleFinanceiro.Controllers
 {
