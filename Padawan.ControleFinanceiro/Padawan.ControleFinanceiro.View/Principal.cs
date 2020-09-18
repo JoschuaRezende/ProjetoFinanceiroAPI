@@ -15,7 +15,7 @@ namespace Padawan.ControleFinanceiro.View
             InitializeComponent();
         }
 
-        private void btn_Financeiro_Click(object sender, EventArgs e)
+        private void Btn_Financeiro_Click(object sender, EventArgs e)
         {
             var operacaofinanceira = new OperacaoFinanceira();
             operacaofinanceira.ShowDialog();

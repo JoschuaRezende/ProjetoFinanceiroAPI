@@ -50,7 +50,7 @@
             this.btn_Financeiro.TabIndex = 0;
             this.btn_Financeiro.Text = "Operações Financeiras";
             this.btn_Financeiro.UseVisualStyleBackColor = true;
-            this.btn_Financeiro.Click += new System.EventHandler(this.btn_Financeiro_Click);
+            this.btn_Financeiro.Click += new System.EventHandler(this.Btn_Financeiro_Click);
             // 
             // btn_CadastroBanco
             // 
