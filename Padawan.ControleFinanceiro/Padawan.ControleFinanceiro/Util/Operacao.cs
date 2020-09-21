@@ -1,4 +1,6 @@
 ﻿using Padawan.ControleFinanceiro.Context;
+using System;
+using System.Collections.Generic;
 
 namespace Padawan.ControleFinanceiro.Util
 {

@@ -8,7 +8,6 @@ namespace Padawan.ControleFinanceiro.Controllers
     [Route("Categoria")]
     public class CategoriaControllers : ControllerBase
     {
-
         [HttpPost]
         [Route("Cadastro")]
         public ActionResult PostBanco(Categoria objeto)
@@ -37,8 +36,6 @@ namespace Padawan.ControleFinanceiro.Controllers
         [Route("Atualizar")]
         public ActionResult Atualizar(string categoria, string novacategoria)
         {
-            Util.Categoria u1 = new Util.Categoria();
-
             new Util.Categoria().Renomear(categoria, novacategoria);
 
             return Ok("Atualizado com Sucesso");
@@ -48,7 +45,7 @@ namespace Padawan.ControleFinanceiro.Controllers
         [Route("Listar")]
         public ActionResult ListarCadastrados()
         {
-            var lista = new Util.Categoria().Listar().Select(p => p.Descricao).ToList();
+            var lista = new Util.Categoria().Listar();
             return Ok(lista);
         }
     }

@@ -11,7 +11,6 @@ namespace Padawan.ControleFinanceiro.Controllers
         [Route("Cadastrar")]
         public ActionResult PostUsuario(Usuario usuario)
         {
-            
             if (new Util.Usuario().Senha(usuario.Senha))
             {
                 var result2 = new Util.Usuario().Valida(usuario);

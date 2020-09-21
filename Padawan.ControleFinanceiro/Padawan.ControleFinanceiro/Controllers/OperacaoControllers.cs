@@ -33,21 +33,5 @@ namespace Padawan.ControleFinanceiro.Controllers
             }
             return BadRequest();
         }
-
-        [HttpGet]
-        [Route("Listar")]
-        public ActionResult ListarCadastrados(Operacao objeto)
-        {
-            objeto.Data = DateTime.Now;
-
-            var result = new Util.Operacao().Add(objeto);
-
-            if (!result)
-            {
-                return BadRequest();
-            }
-            return Ok();
-        }
-
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Padawan.ControleFinanceiro.Model;
-using System.Linq;
 
 namespace Padawan.ControleFinanceiro.Controllers
 {
@@ -40,7 +39,7 @@ namespace Padawan.ControleFinanceiro.Controllers
         [Route("Listar")]
         public ActionResult ListaCadastrados()
         {
-            var lista = new Util.Carteira().Listar().Select(p => p.Descricao).ToList();
+            var lista = new Util.Carteira().Listar();
             return Ok(lista);
         }
     }
