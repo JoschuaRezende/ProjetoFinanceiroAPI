@@ -22,7 +22,7 @@ namespace Padawan.ControleFinanceiro.Controllers
 
         [HttpPost]
         [Route("Cadastrar")]
-        public ActionResult PostUsuario(Model.Usuario usuario)
+        public ActionResult PostUsuario(Usuario usuario)
         {
             try
             {

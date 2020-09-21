@@ -44,7 +44,7 @@ namespace Padawan.ControleFinanceiro.Util
 
         public bool ValidaLogin(string usuario, string senha)
         {
-            var result = new Util.Usuario();
+            var result = new Usuario();
 
             return result.Listar().Any(p => p.Login == usuario && p.Senha == senha);
         }
