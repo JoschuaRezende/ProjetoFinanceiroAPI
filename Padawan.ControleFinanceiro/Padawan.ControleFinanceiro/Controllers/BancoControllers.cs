@@ -40,7 +40,7 @@ namespace Padawan.ControleFinanceiro.Controllers
         [Route("Listar")]
         public ActionResult ListaCadastrada()
         {
-            var lista = new Util.Banco().Lista().Select(p => p.Descricao).ToList();
+            var lista = new Util.Banco().Lista();
             return Ok(lista);
         }
     }
