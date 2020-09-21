@@ -11,16 +11,12 @@ namespace Padawan.ControleFinanceiro.Controllers
         [Route("Cadastrar")]
         public ActionResult PostUsuario(Usuario usuario)
         {
-            Util.Usuario u1 = new Util.Usuario();
-            var result = u1.Senha(usuario.Senha);
-
-            if (result)
+            
+            if (new Util.Usuario().Senha(usuario.Senha))
             {
-                var result2 = u1.Valida(usuario);
+                var result2 = new Util.Usuario().Valida(usuario);
                 if (result2)
-                {
                   return Ok("Adicionado com sucesso");
-                }
                 return BadRequest("Já existe login");
             }
             else

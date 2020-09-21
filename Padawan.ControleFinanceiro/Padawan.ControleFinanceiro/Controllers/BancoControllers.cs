@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Padawan.ControleFinanceiro.Model;
+using System.Linq;
 
 namespace Padawan.ControleFinanceiro.Controllers
 {
@@ -14,7 +15,6 @@ namespace Padawan.ControleFinanceiro.Controllers
             context = new Util.Banco();
         }
 
-
         [HttpPost]
         [Route("Cadastro")]
         public ActionResult PostBanco(Banco usuario)
@@ -25,7 +25,6 @@ namespace Padawan.ControleFinanceiro.Controllers
             return Ok();
         }
 
-
         [HttpPut]
         [Route("Atualizar")]
         public ActionResult Atualizar(string descricao, string usuario, string novadescricao)
@@ -35,6 +34,14 @@ namespace Padawan.ControleFinanceiro.Controllers
                 return Ok("Atualizado com sucesso");
             }
             return BadRequest("Erro ao atualizar");
+        }
+
+        [HttpGet]
+        [Route("Listar")]
+        public ActionResult ListaCadastrada()
+        {
+            var lista = new Util.Banco().Lista().Select(p => p.Descricao).ToList();
+            return Ok(lista);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Padawan.ControleFinanceiro.Context;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Padawan.ControleFinanceiro.Util
@@ -30,6 +31,11 @@ namespace Padawan.ControleFinanceiro.Util
             filtro.IdUsuario = usuarioId.RetornaIdNome(usuario);
 
             return context.AtualizarBanco(filtro);
+        }
+
+        internal List<Model.Banco> Lista()
+        {
+            return context.ListarBanco();
         }
     }
 }

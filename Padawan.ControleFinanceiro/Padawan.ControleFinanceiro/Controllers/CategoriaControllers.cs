@@ -38,7 +38,7 @@ namespace Padawan.ControleFinanceiro.Controllers
         {
             Util.Categoria u1 = new Util.Categoria();
 
-            u1.Renomear(categoria, novacategoria);
+            new Util.Categoria().Renomear(categoria, novacategoria);
 
             return Ok("Atualizado com Sucesso");
         }

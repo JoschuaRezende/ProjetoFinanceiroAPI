@@ -12,10 +12,9 @@ namespace Padawan.ControleFinanceiro.Controllers
         [Route("Cadastro")]
         public ActionResult PostBanco(Operacao objeto)
         {
-            Util.Operacao u1 = new Util.Operacao();
             objeto.Data = DateTime.Now;
 
-            var result = u1.Add(objeto);
+            var result = new Util.Operacao().Add(objeto);
 
             if (!result)
             {
@@ -28,8 +27,7 @@ namespace Padawan.ControleFinanceiro.Controllers
         [Route("Deletar")]
         public ActionResult Delete(string objeto)
         {
-            Util.Operacao u1 = new Util.Operacao();
-            if (u1.Remover(objeto))
+            if (new Util.Operacao().Remover(objeto))
             {
                 return Ok();
             }
