@@ -7,18 +7,12 @@ namespace Padawan.ControleFinanceiro.Controllers
     [Route("Categoria")]
     public class CategoriaControllers : ControllerBase
     {
-        public readonly Util.Categoria categoria;
-
-        public CategoriaControllers()
-        {
-            categoria = new Util.Categoria();
-        }
 
         [HttpPost]
         [Route("Cadastro")]
         public ActionResult PostBanco(Categoria objeto)
         {
-            var result = categoria.Add(objeto);
+            var result = new Util.Categoria().Add(objeto);
 
             if (!result)
             {
@@ -31,8 +25,7 @@ namespace Padawan.ControleFinanceiro.Controllers
         [Route("Deletar")]
         public ActionResult Delete(string objeto)
         {
-            Util.Categoria u1 = new Util.Categoria();
-            if (u1.Remove(objeto))
+            if (new Util.Categoria().Remove(objeto))
             {
                 return Ok();
             }

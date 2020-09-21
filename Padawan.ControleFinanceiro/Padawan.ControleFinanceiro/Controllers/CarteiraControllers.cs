@@ -12,9 +12,8 @@ namespace Padawan.ControleFinanceiro.Controllers
         [Route("Cadastro")]
         public ActionResult PostBanco(Carteira objeto)
         {
-            Util.Carteira u1 = new Util.Carteira();
             objeto.Saldo = 0;
-            var result = u1.Add(objeto);
+            var result = new Util.Carteira().Add(objeto);
 
             if (!result)
             {
@@ -27,9 +26,9 @@ namespace Padawan.ControleFinanceiro.Controllers
         [Route("Saldo")]
         public ActionResult GetSaldo(string descricao)
         {
-            Util.Carteira u1 = new Util.Carteira();
+            var carteira = new Util.Carteira();
 
-            if (u1.AtualizarSaldo(u1.CalcularSaldo(descricao), descricao))
+            if (carteira.AtualizarSaldo(carteira.CalcularSaldo(descricao), descricao))
             {
                 return Ok("Saldo calculado com sucesso");
             }
