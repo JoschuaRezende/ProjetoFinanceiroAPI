@@ -35,7 +35,7 @@ namespace Padawan.ControleFinanceiro.Controllers
             }
             catch (Exception ex)
             {
-                status.ResultadoOperacao(false, statusNegativo, "Erro: " + ex);
+                status.ResultadoOperacao(true, statusNegativo, "Erro: " + ex);
                 return BadRequest(status);
             }
         }
