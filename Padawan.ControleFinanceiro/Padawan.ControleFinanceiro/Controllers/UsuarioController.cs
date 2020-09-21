@@ -9,38 +9,44 @@ namespace Padawan.ControleFinanceiro.Controllers
     [Route("Usuario")]
     public class UsuarioController : ControllerBase
     {
+        const System.Net.HttpStatusCode statusNegativo = System.Net.HttpStatusCode.BadRequest;
+        const System.Net.HttpStatusCode statusPositivo = System.Net.HttpStatusCode.OK;
+        readonly Result<List<Model.Usuario>> status;
+        readonly Util.Usuario user;
+
+        public UsuarioController()
+        {
+            status = new Result<List<Model.Usuario>>();
+            user = new Util.Usuario();
+        }
+
         [HttpPost]
         [Route("Cadastrar")]
         public ActionResult PostUsuario(Model.Usuario usuario)
         {
-            var result = new Result<List<Model.Usuario>>();
-            var statusNegativo = System.Net.HttpStatusCode.BadRequest;
-            var statusPositivo = System.Net.HttpStatusCode.OK;
             try
             {
-                if (new Util.Usuario().Senha(usuario.Senha))
+                if (user.Senha(usuario.Senha))
                 {
-                    var result2 = new Util.Usuario().Valida(usuario);
+                    var result2 = user.Valida(usuario);
                     if (result2)
                     {
-                        result.ResultadoOperacao(false, statusPositivo, "Adicionado com suceso");
-                        return Ok(result);
+                        status.ResultadoOperacao(false, statusPositivo, "Adicionado com sucesso");
+                        return Ok(status);
                     }
-                    result.ResultadoOperacao(true, statusNegativo, "Já existe login");
-                    return BadRequest(result);
+                    status.ResultadoOperacao(true, statusNegativo, "Já existe login");
+                    return BadRequest(status);
                 }
                 else
                 {
-                    result.ResultadoOperacao(true, statusNegativo, "Senha Fraca");
-                    return BadRequest(result);
+                    status.ResultadoOperacao(true, statusNegativo, "Senha Fraca");
+                    return BadRequest(status);
                 }
             }
             catch (Exception ex)
             {
-                result.Erro = false;
-                result.Status = System.Net.HttpStatusCode.BadRequest;
-                result.Mensagem = "Erro:" + ex;
-                return BadRequest(result);
+                status.ResultadoOperacao(false, statusNegativo, "Erro: " + ex);
+                return BadRequest(status);
             }
         }
 
@@ -48,30 +54,61 @@ namespace Padawan.ControleFinanceiro.Controllers
         [Route("Listar")]
         public ActionResult GetListar()
         {
-            var result = new Util.Usuario();
-            if (result.ListaNomeUsuarios().Count == 0)
-               return BadRequest("Não Possui nenhum cadastro de Usuário");
-            return Ok(result.ListaNomeUsuarios());
+            try
+            {
+                if (user.ListaNomeUsuarios().Count == 0)
+                {
+                    status.ResultadoOperacao(true, statusNegativo, "Não Possui nenhum cadastro de Usuário");
+                    return BadRequest(status);
+                }
+                else
+                {
+                    status.Data = user.ListaNomeUsuarios();
+                    return Ok(status);
+                }
+            }
+            catch (Exception ex)
+            {
+                status.ResultadoOperacao(false, statusNegativo, "Erro: " + ex);
+                return BadRequest(status);
+            }
         }
 
         [HttpGet]
         [Route("Logar")]
         public ActionResult GetLogar(string usuario, string senha)
         {
-            var result = new Util.Usuario();
-            if (!result.ValidaLogin(usuario, senha))
-                return BadRequest();
-            return Ok();
+            try
+            {
+                if (!user.ValidaLogin(usuario, senha))
+                    status.ResultadoOperacao(false, statusNegativo, "Login invalido");
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                status.ResultadoOperacao(false, statusNegativo, "Erro: " + ex);
+                return BadRequest(status);
+            }
         }
 
         [HttpPut]
         [Route("AlterarSenha")]
         public ActionResult PutAlterarSenha(string usuario, string senha)
         {
-            var result = new Util.Usuario();
-            if (!result.ValidaUsuario(usuario))
+
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            var user = new Util.Usuario();
+            if (!user.ValidaUsuario(usuario))
                 return BadRequest("Usuario Incorreto");
-            if (!result.AlterarSenha(usuario, senha))
+            if (!user.AlterarSenha(usuario, senha))
                 return BadRequest("Senha invalida para alteração");
             return Ok("senha alterada com sucesso");
         }
