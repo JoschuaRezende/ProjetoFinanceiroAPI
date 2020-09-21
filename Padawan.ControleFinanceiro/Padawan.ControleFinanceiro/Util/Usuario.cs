@@ -70,6 +70,13 @@ namespace Padawan.ControleFinanceiro.Util
         {
             return context.ListarUsuario().Any(p => p.Login == usuario);
         }
+
+        public bool Remove(string objeto)
+        {
+            var result = context.ListarUsuario().Find(p => p.Login == objeto);
+            context.Remove(result);
+            return true;
+        }
     }
 }
 

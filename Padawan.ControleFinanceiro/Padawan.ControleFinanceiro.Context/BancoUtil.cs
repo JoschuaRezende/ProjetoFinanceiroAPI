@@ -1,4 +1,5 @@
 ﻿using Padawan.ControleFinanceiro.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -94,6 +95,17 @@ namespace Padawan.ControleFinanceiro.Context
             }
             return result;
         }
+
+        public void Remove(Usuario result)
+        {
+            banco = new BancoContext();
+            using (banco)
+            {
+                banco.Usuarios.Remove(result);
+                banco.SaveChanges();
+            }
+        }
+
         public List<Categoria> ListarCategoria()
         {
             banco = new BancoContext();

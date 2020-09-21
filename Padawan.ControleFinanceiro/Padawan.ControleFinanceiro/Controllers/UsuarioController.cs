@@ -122,5 +122,26 @@ namespace Padawan.ControleFinanceiro.Controllers
                 return BadRequest(status);
             }
         }
+
+        [HttpDelete]
+        [Route("Deletar")]
+        public ActionResult Delete(string objeto)
+        {
+            try
+            {
+                if (user.Remove(objeto))
+                {
+                    status.ResultadoOperacao(false, statusPositivo, "Removido com sucesso");
+                    return Ok(status);
+                }
+                status.ResultadoOperacao(true, statusNegativo, "Existe Operações que utilizam a categoria");
+                return BadRequest(status);
+            }
+            catch (Exception ex)
+            {
+                status.ResultadoOperacao(false, statusNegativo, "Erro: " + ex);
+                return BadRequest(status);
+            }
+        }
     }
 }
