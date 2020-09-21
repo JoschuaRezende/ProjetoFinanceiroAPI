@@ -31,9 +31,9 @@ namespace Padawan.ControleFinanceiro.Util
             return retorno;
         }
 
-        public List<string> ListaNomeUsuarios()
+        public List<Model.Usuario> ListaNomeUsuarios()
         {
-            return context.ListarUsuario().Select(p => p.Nome).ToList();
+            return context.ListarUsuario();
         }
 
         public int RetornaIdNome(string usuario)

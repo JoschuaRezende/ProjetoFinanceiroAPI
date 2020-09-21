@@ -3,7 +3,6 @@ using Padawan.ControleFinanceiro.Model;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Security.Policy;
 using System.Text;
 using System.Windows.Forms;
 
@@ -42,14 +41,12 @@ namespace Padawan.ControleFinanceiro.View
             this.Close();
         }
 
-        private void txt_Senha_TextChanged(object sender, EventArgs e)
+        private void Txt_Senha_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void CadastrarUsuario_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

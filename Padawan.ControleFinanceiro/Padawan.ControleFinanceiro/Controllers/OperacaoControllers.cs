@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Padawan.ControleFinanceiro.Model;
 using System;
+using System.Collections.Generic;
 
 namespace Padawan.ControleFinanceiro.Controllers
 {
@@ -8,30 +9,52 @@ namespace Padawan.ControleFinanceiro.Controllers
     [Route("Operacao")]
     public class OperacaoControllers : ControllerBase
     {
+        private const System.Net.HttpStatusCode statusNegativo = System.Net.HttpStatusCode.BadRequest;
+        private const System.Net.HttpStatusCode statusPositivo = System.Net.HttpStatusCode.OK;
+        private readonly Result<List<Operacao>> status;
+        private readonly Util.Operacao oper;
+
         [HttpPost]
         [Route("Cadastro")]
         public ActionResult PostBanco(Operacao objeto)
         {
-            objeto.Data = DateTime.Now;
-
-            var result = new Util.Operacao().Add(objeto);
-
-            if (!result)
+            try
             {
-                return BadRequest();
+                objeto.Data = DateTime.Now;
+
+                if (!oper.Add(objeto))
+                {
+                    status.ResultadoOperacao(true, statusNegativo, "Erro ao adicionar");
+                    return BadRequest(status);
+                }
+                return Ok();
             }
-            return Ok();
+            catch (Exception ex)
+            {
+                status.ResultadoOperacao(false, statusNegativo, "Erro: " + ex);
+                return BadRequest(status);
+            }
         }
 
         [HttpDelete]
         [Route("Deletar")]
         public ActionResult Delete(string objeto)
         {
-            if (new Util.Operacao().Remover(objeto))
+            try
             {
-                return Ok();
+                if (oper.Remover(objeto))
+                {
+                    status.ResultadoOperacao(false, statusPositivo, "Deletado com sucesso");
+                    return Ok(status);
+                }
+                status.ResultadoOperacao(true, statusNegativo, "Erro");
+                return BadRequest();
             }
-            return BadRequest();
+            catch (Exception ex)
+            {
+                status.ResultadoOperacao(false, statusNegativo, "Erro: " + ex);
+                return BadRequest(status);
+            }
         }
     }
 }

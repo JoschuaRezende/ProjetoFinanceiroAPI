@@ -9,10 +9,10 @@ namespace Padawan.ControleFinanceiro.Controllers
     [Route("Usuario")]
     public class UsuarioController : ControllerBase
     {
-        const System.Net.HttpStatusCode statusNegativo = System.Net.HttpStatusCode.BadRequest;
-        const System.Net.HttpStatusCode statusPositivo = System.Net.HttpStatusCode.OK;
-        readonly Result<List<Model.Usuario>> status;
-        readonly Util.Usuario user;
+        private const System.Net.HttpStatusCode statusNegativo = System.Net.HttpStatusCode.BadRequest;
+        private const System.Net.HttpStatusCode statusPositivo = System.Net.HttpStatusCode.OK;
+        private readonly Result<List<Usuario>> status;
+        private readonly Util.Usuario user;
 
         public UsuarioController()
         {
@@ -81,7 +81,10 @@ namespace Padawan.ControleFinanceiro.Controllers
             try
             {
                 if (!user.ValidaLogin(usuario, senha))
-                    status.ResultadoOperacao(false, statusNegativo, "Login invalido");
+                {
+                    status.ResultadoOperacao(true, statusNegativo, "Login invalido");
+                    return BadRequest(status);
+                }
                 return Ok();
             }
             catch (Exception ex)
@@ -95,22 +98,29 @@ namespace Padawan.ControleFinanceiro.Controllers
         [Route("AlterarSenha")]
         public ActionResult PutAlterarSenha(string usuario, string senha)
         {
-
             try
             {
-
+                if (!user.ValidaUsuario(usuario))
+                {
+                    status.ResultadoOperacao(true, statusNegativo, "Usuario Incorreto, não consta no banco");
+                    return BadRequest(status);
+                }
+                else if (!user.AlterarSenha(usuario, senha))
+                {
+                    status.ResultadoOperacao(true, statusNegativo, "Senha invalida para alteração");
+                    return BadRequest(status);
+                }
+                else
+                {
+                    status.ResultadoOperacao(false, statusPositivo, "senha alterada com sucesso");
+                    return Ok(status);
+                }
             }
             catch (Exception ex)
             {
-
-                throw;
+                status.ResultadoOperacao(false, statusNegativo, "Erro: " + ex);
+                return BadRequest(status);
             }
-            var user = new Util.Usuario();
-            if (!user.ValidaUsuario(usuario))
-                return BadRequest("Usuario Incorreto");
-            if (!user.AlterarSenha(usuario, senha))
-                return BadRequest("Senha invalida para alteração");
-            return Ok("senha alterada com sucesso");
         }
     }
 }
