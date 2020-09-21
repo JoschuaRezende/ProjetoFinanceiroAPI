@@ -14,6 +14,12 @@ namespace Padawan.ControleFinanceiro.Controllers
         private readonly Result<List<Operacao>> status;
         private readonly Util.Operacao oper;
 
+        public OperacaoControllers()
+        {
+            status = new Result<List<Operacao>>();
+            oper = new Util.Operacao();
+        }
+
         [HttpPost]
         [Route("Cadastro")]
         public ActionResult PostBanco(Operacao objeto)
@@ -47,8 +53,8 @@ namespace Padawan.ControleFinanceiro.Controllers
                     status.ResultadoOperacao(false, statusPositivo, "Deletado com sucesso");
                     return Ok(status);
                 }
-                status.ResultadoOperacao(true, statusNegativo, "Erro");
-                return BadRequest();
+                status.ResultadoOperacao(true, statusNegativo, "Erro ao deletar");
+                return BadRequest(status);
             }
             catch (Exception ex)
             {
