@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Padawan.ControleFinanceiro.Model;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Security.Policy;
 using System.Text;
@@ -31,7 +32,24 @@ namespace Padawan.ControleFinanceiro.View
 
             var result = httpClient.PostAsync(URL, content);
             result.Wait();
+
+            var resultado = result.Result.Content.ReadAsStringAsync();
+            result.Wait();
+
+            var resultadoCorpo = JsonConvert.DeserializeObject<Result<List<Model.Usuario>>>(resultado.Result);
+            MessageBox.Show(resultadoCorpo.Mensagem);
+
             this.Close();
+        }
+
+        private void txt_Senha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CadastrarUsuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

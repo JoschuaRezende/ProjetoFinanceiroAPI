@@ -84,6 +84,7 @@
             this.txt_Senha.Name = "txt_Senha";
             this.txt_Senha.Size = new System.Drawing.Size(271, 23);
             this.txt_Senha.TabIndex = 1;
+            this.txt_Senha.TextChanged += new System.EventHandler(this.txt_Senha_TextChanged);
             // 
             // btn_Cadastrar
             // 
@@ -109,6 +110,7 @@
             this.Controls.Add(this.lbl_Nome);
             this.Name = "CadastrarUsuario";
             this.Text = "CadastrarUsuario";
+            this.Load += new System.EventHandler(this.CadastrarUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Padawan.ControleFinanceiro.Model;
+using System;
+using System.Collections.Generic;
 
 namespace Padawan.ControleFinanceiro.Controllers
 {
@@ -9,18 +11,36 @@ namespace Padawan.ControleFinanceiro.Controllers
     {
         [HttpPost]
         [Route("Cadastrar")]
-        public ActionResult PostUsuario(Usuario usuario)
+        public ActionResult PostUsuario(Model.Usuario usuario)
         {
-            if (new Util.Usuario().Senha(usuario.Senha))
+            var result = new Result<List<Model.Usuario>>();
+            var statusNegativo = System.Net.HttpStatusCode.BadRequest;
+            var statusPositivo = System.Net.HttpStatusCode.OK;
+            try
             {
-                var result2 = new Util.Usuario().Valida(usuario);
-                if (result2)
-                  return Ok("Adicionado com sucesso");
-                return BadRequest("Já existe login");
+                if (new Util.Usuario().Senha(usuario.Senha))
+                {
+                    var result2 = new Util.Usuario().Valida(usuario);
+                    if (result2)
+                    {
+                        result.ResultadoOperacao(false, statusPositivo, "Adicionado com suceso");
+                        return Ok(result);
+                    }
+                    result.ResultadoOperacao(true, statusNegativo, "Já existe login");
+                    return BadRequest(result);
+                }
+                else
+                {
+                    result.ResultadoOperacao(true, statusNegativo, "Senha Fraca");
+                    return BadRequest(result);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return BadRequest("Senha Fraca");
+                result.Erro = false;
+                result.Status = System.Net.HttpStatusCode.BadRequest;
+                result.Mensagem = "Erro:" + ex;
+                return BadRequest(result);
             }
         }
 
