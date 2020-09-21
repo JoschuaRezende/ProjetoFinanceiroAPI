@@ -1,4 +1,5 @@
 ﻿using Padawan.ControleFinanceiro.Context;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Padawan.ControleFinanceiro.Util
@@ -45,6 +46,11 @@ namespace Padawan.ControleFinanceiro.Util
             context.AtualizarCarteira(filtro);
 
             return true;
+        }
+
+        internal List<Model.Categoria> Listar()
+        {
+            return context.ListarCategoria();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Padawan.ControleFinanceiro.Model;
+using System.Linq;
 
 namespace Padawan.ControleFinanceiro.Controllers
 {
@@ -41,6 +42,14 @@ namespace Padawan.ControleFinanceiro.Controllers
             new Util.Categoria().Renomear(categoria, novacategoria);
 
             return Ok("Atualizado com Sucesso");
+        }
+
+        [HttpGet]
+        [Route("Listar")]
+        public ActionResult ListarCadastrados()
+        {
+            var lista = new Util.Categoria().Listar().Select(p => p.Descricao).ToList();
+            return Ok(lista);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Padawan.ControleFinanceiro.Context;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Padawan.ControleFinanceiro.Util
@@ -43,6 +44,11 @@ namespace Padawan.ControleFinanceiro.Util
             var credito = new BancoUtil<Operacao>().ListaOperacaoes().Where(p => p.Tipo == 'c' && p.IdCarteira == carteira.Id).Sum(p => p.Valor);
             var debito = new BancoUtil<Operacao>().ListaOperacaoes().Where(p => p.Tipo == 'd' && p.IdCarteira == carteira.Id).Sum(p => p.Valor);
             return credito - debito;
+        }
+
+        internal List<Model.Carteira> Listar()
+        {
+            return context.ListarCarteira();
         }
     }
 }
