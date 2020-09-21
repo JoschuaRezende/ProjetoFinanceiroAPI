@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Padawan.ControleFinanceiro.Model;
+using System;
+using System.Collections.Generic;
 
 namespace Padawan.ControleFinanceiro.Controllers
 {
@@ -7,40 +9,72 @@ namespace Padawan.ControleFinanceiro.Controllers
     [Route("Banco")]
     public class BancoControllers : ControllerBase
     {
-        public readonly Util.Banco context;
+        private const System.Net.HttpStatusCode statusNegativo = System.Net.HttpStatusCode.BadRequest;
+        private const System.Net.HttpStatusCode statusPositivo = System.Net.HttpStatusCode.OK;
+        private readonly Result<List<Banco>> status;
+        public readonly Util.Banco banco;
 
         public BancoControllers()
         {
-            context = new Util.Banco();
+            banco = new Util.Banco();
         }
 
         [HttpPost]
         [Route("Cadastro")]
         public ActionResult PostBanco(Banco usuario)
         {
-            var result = context.Add(usuario);
-            if (!result)
-                return BadRequest();
-            return Ok();
+            try
+            {
+                if (!banco.Add(usuario))
+                {
+                    status.ResultadoOperacao(true, statusNegativo, "Erro ao adicionar");
+                    return BadRequest(status);
+                }
+                status.ResultadoOperacao(true, statusPositivo, "Adicionado com sucesso");
+                return Ok(status);
+            }
+            catch (Exception ex)
+            {
+                status.ResultadoOperacao(true, statusNegativo, "Erro: " + ex);
+                return BadRequest(status);
+            }
         }
 
         [HttpPut]
         [Route("Atualizar")]
         public ActionResult Atualizar(string descricao, string usuario, string novadescricao)
         {
-            if (context.Renomear(descricao, usuario, novadescricao))
+            try
             {
-                return Ok("Atualizado com sucesso");
+                if (banco.Renomear(descricao, usuario, novadescricao))
+                {
+                    status.ResultadoOperacao(false, statusPositivo, "Renomeado com sucesso");
+                    return Ok(status);
+                }
+                status.ResultadoOperacao(true, statusNegativo, "Erro ao renomear");
+                return BadRequest(status);
             }
-            return BadRequest("Erro ao atualizar");
+            catch (Exception ex)
+            {
+                status.ResultadoOperacao(true, statusNegativo, "Erro: " + ex);
+                return BadRequest(status);
+            }
         }
 
         [HttpGet]
         [Route("Listar")]
         public ActionResult ListaCadastrada()
         {
-            var lista = new Util.Banco().Lista();
-            return Ok(lista);
+            try
+            {
+                var lista = new Util.Banco().Lista();
+                return Ok(lista);
+            }
+            catch (Exception ex)
+            {
+                status.ResultadoOperacao(true, statusNegativo, "Erro: " + ex);
+                return BadRequest(status);
+            }
         }
     }
 }
