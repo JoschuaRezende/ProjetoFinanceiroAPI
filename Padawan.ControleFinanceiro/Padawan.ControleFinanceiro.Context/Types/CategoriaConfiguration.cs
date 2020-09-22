@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Padawan.ControleFinanceiro.Context.Types
 {
-    class CategoriaConfiguration : IEntityTypeConfiguration<Model.Categoria>
+    internal class CategoriaConfiguration : IEntityTypeConfiguration<Model.Categoria>
     {
         public void Configure(EntityTypeBuilder<Categoria> builder)
         {

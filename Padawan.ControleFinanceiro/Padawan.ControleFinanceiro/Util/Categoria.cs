@@ -14,6 +14,7 @@ namespace Padawan.ControleFinanceiro.Util
         public bool Add(Model.Categoria objeto)
         {
             var retorno = context.ListarCategoria().Any(p => p.Descricao == objeto.Descricao);
+          
             if (!retorno)
             {
                 context.Add(objeto);
@@ -29,7 +30,10 @@ namespace Padawan.ControleFinanceiro.Util
         public bool Remove(string categoria)
         {
             var objeto = context.ListarCategoria().Find(p => p.Descricao == categoria);
-
+            if (objeto is null)
+            {
+                return false;
+            }
             if (ValidaCategoriaOperacao(objeto))
             {
                 return false;

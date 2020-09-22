@@ -15,10 +15,7 @@ namespace Padawan.ControleFinanceiro.Context.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Descricao = table.Column<string>(maxLength: 100, nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Categorias", x => x.Id);
-                });
+                constraints: table => table.PrimaryKey("PK_Categorias", x => x.Id));
 
             migrationBuilder.CreateTable(
                 name: "Usuarios",
@@ -30,10 +27,7 @@ namespace Padawan.ControleFinanceiro.Context.Migrations
                     Login = table.Column<string>(maxLength: 100, nullable: false),
                     Senha = table.Column<string>(maxLength: 50, nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Usuarios", x => x.Id);
-                });
+                constraints: table => table.PrimaryKey("PK_Usuarios", x => x.Id));
 
             migrationBuilder.CreateTable(
                 name: "Bancos",

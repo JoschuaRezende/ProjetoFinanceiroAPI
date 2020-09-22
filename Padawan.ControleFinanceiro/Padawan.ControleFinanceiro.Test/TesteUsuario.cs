@@ -41,7 +41,6 @@ namespace Padawan.ControleFinanceiro.Test
             {
                 Assert.IsTrue(result);
             }
-            
         }
 
         [TestMethod]
@@ -69,24 +68,24 @@ namespace Padawan.ControleFinanceiro.Test
         [TestMethod]
         public void ListaNomeUsuarios_Ok()
         {
-            var list = new List<Model.Usuario>();
-            list.Add(new Model.Usuario
+            var list = new List<Model.Usuario>
             {
-                Nome = "Teste2",
-                Senha = "123asd",
-                Login = "Teste2"
-            });
+                new Model.Usuario
+                {
+                    Nome = "Teste2",
+                    Senha = "123asd",
+                    Login = "Teste2"
+                },
 
-            list.Add(new Model.Usuario
-            {
-                Nome = "Teste",
-                Senha = "123asd",
-                Login = "Teste"
-            });
+                new Model.Usuario
+                {
+                    Nome = "Teste",
+                    Senha = "123asd",
+                    Login = "Teste"
+                }
+            };
 
-            var list2 = list.Select(p => p.Nome).ToList();
-
-            Assert.IsNotNull(list2);
+            Assert.IsNotNull(list.Select(p => p.Nome).ToList());
         }
     }
 }
