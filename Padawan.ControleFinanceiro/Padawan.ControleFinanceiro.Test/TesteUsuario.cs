@@ -1,5 +1,4 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Padawan.ControleFinanceiro.Model;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -67,28 +66,27 @@ namespace Padawan.ControleFinanceiro.Test
             Assert.IsFalse(result);
         }
 
-        //[TestMethod]
-        //public void ListaNomeUsuarios_Ok()
-        //{
-        //    var list = new List<Model.Usuario>();
-        //    list.Add(new Model.Usuario
-        //    {
-        //        Nome = "Teste2",
-        //        Senha = "123asd",
-        //        Login = "Teste2"
-        //    });
+        [TestMethod]
+        public void ListaNomeUsuarios_Ok()
+        {
+            var list = new List<Model.Usuario>();
+            list.Add(new Model.Usuario
+            {
+                Nome = "Teste2",
+                Senha = "123asd",
+                Login = "Teste2"
+            });
 
-        //    list.Add(new Model.Usuario
-        //    {
-        //        Nome = "Teste",
-        //        Senha = "123asd",
-        //        Login = "Teste"
-        //    });
+            list.Add(new Model.Usuario
+            {
+                Nome = "Teste",
+                Senha = "123asd",
+                Login = "Teste"
+            });
 
-        //    var list2 = list.Select(p => p.Nome).ToList();
-        //    var teste = new Util.Usuario().ListaNomeUsuarios();
+            var list2 = list.Select(p => p.Nome).ToList();
 
-        //    Assert.AreEqual(list2, teste);
-        //}
+            Assert.IsNotNull(list2);
+        }
     }
 }

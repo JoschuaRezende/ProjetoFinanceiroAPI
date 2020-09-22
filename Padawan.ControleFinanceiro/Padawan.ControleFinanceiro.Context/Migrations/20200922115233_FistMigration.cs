@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Padawan.ControleFinanceiro.Context.Migrations
 {
-    public partial class Primeiro : Migration
+    public partial class FistMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,7 @@ namespace Padawan.ControleFinanceiro.Context.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Descricao = table.Column<string>(nullable: true)
+                    Descricao = table.Column<string>(maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -26,9 +26,9 @@ namespace Padawan.ControleFinanceiro.Context.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(nullable: true),
-                    Login = table.Column<string>(nullable: true),
-                    Senha = table.Column<string>(nullable: true)
+                    Nome = table.Column<string>(maxLength: 100, nullable: false),
+                    Login = table.Column<string>(maxLength: 100, nullable: false),
+                    Senha = table.Column<string>(maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -42,7 +42,7 @@ namespace Padawan.ControleFinanceiro.Context.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IdUsuario = table.Column<int>(nullable: false),
-                    Descricao = table.Column<string>(nullable: true)
+                    Descricao = table.Column<string>(maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -61,7 +61,7 @@ namespace Padawan.ControleFinanceiro.Context.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Descricao = table.Column<string>(nullable: true),
+                    Descricao = table.Column<string>(maxLength: 100, nullable: false),
                     IdBanco = table.Column<int>(nullable: false),
                     Saldo = table.Column<double>(nullable: false)
                 },
@@ -87,7 +87,7 @@ namespace Padawan.ControleFinanceiro.Context.Migrations
                     Tipo = table.Column<string>(nullable: false),
                     Valor = table.Column<double>(nullable: false),
                     Data = table.Column<DateTime>(nullable: false),
-                    Descricao = table.Column<string>(nullable: true)
+                    Descricao = table.Column<string>(maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
