@@ -32,7 +32,7 @@ namespace Padawan.ControleFinanceiro.Util
 
             return context.AtualizarBanco(filtro);
         }
-        internal List<Model.Banco> Lista()
+        public List<Model.Banco> Lista()
         {
             return context.ListarBanco();
         }

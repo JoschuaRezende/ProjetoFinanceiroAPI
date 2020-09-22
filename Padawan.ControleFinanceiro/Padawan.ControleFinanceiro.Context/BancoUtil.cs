@@ -1,5 +1,4 @@
 ﻿using Padawan.ControleFinanceiro.Model;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -203,5 +202,7 @@ namespace Padawan.ControleFinanceiro.Context
             }
             return true;
         }
+
+    
     }
 }
