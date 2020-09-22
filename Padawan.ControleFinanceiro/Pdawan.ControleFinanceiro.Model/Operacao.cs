@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Padawan.ControleFinanceiro.Model.Interfaces;
+using System;
 
 namespace Padawan.ControleFinanceiro.Model
 {
-    public class Operacao
+    public class Operacao : IOperacao
     {
         public int Id { get; set; }
         public int IdCategoria { get; set; }
