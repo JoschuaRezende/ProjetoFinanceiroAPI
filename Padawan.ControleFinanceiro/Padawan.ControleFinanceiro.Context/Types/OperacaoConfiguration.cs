@@ -12,7 +12,6 @@ namespace Padawan.ControleFinanceiro.Context.Types
         public void Configure(EntityTypeBuilder<Operacao> builder)
         {
             builder.HasKey(q => q.Id);
-         
         }
     }
 }

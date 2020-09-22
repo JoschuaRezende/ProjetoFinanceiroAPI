@@ -127,6 +127,7 @@ namespace Padawan.ControleFinanceiro.Controllers
         [Route("Deletar")]
         public ActionResult Delete(string objeto)
         {
+            //tratar a relacao que existe objetos dependentes
             try
             {
                 if (user.Remove(objeto))
