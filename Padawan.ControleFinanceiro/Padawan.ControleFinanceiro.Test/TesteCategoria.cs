@@ -18,7 +18,7 @@ namespace Padawan.ControleFinanceiro.Test
         [TestMethod]
         public void Cadastro_Erro()
         {
-            var categoria = new Util.Categoria().Add(new Model.Categoria
+            new Util.Categoria().Add(new Model.Categoria
             {
                 Descricao = "teste",
             });
@@ -27,7 +27,6 @@ namespace Padawan.ControleFinanceiro.Test
             {
                 Descricao = "teste",
             });
-
 
             Assert.IsFalse(categoriafalse);
         }

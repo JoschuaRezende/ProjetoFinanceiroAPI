@@ -14,7 +14,6 @@ namespace Padawan.ControleFinanceiro.Util
         public bool Add(Model.Categoria objeto)
         {
             var retorno = context.ListarCategoria().Any(p => p.Descricao == objeto.Descricao);
-          
             if (!retorno)
             {
                 context.Add(objeto);

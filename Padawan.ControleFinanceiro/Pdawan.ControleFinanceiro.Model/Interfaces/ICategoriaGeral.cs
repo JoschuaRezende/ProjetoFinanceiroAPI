@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Padawan.ControleFinanceiro.Model.Interfaces
 {
-    interface ICategoriaGeral
+    public interface ICategoriaGeral
     {
+        public int Id { get; set; }
+        string Descricao { get; set; }
     }
 }

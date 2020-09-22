@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Padawan.ControleFinanceiro.Model.Interfaces;
+using System.Collections.Generic;
 
 namespace Padawan.ControleFinanceiro.Model
 {
-    public class Categoria
+    public class Categoria : ICategoriaGeral
     {
         public Categoria()
         {
