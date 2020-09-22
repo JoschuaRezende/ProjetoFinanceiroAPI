@@ -12,6 +12,7 @@ namespace Padawan.ControleFinanceiro.Context.Types
         public void Configure(EntityTypeBuilder<Operacao> builder)
         {
             builder.HasKey(q => q.Id);
+            builder.Property(p => p.Descricao).HasMaxLength(100).IsRequired();
         }
     }
 }
