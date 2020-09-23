@@ -21,6 +21,8 @@ namespace Padawan.ControleFinanceiro.Test
             Assert.IsFalse(senha);
         }
 
+   
+
         [TestMethod]
         public void ValidaUsuario_Ok()
         {
@@ -63,6 +65,22 @@ namespace Padawan.ControleFinanceiro.Test
 
             var result = new Util.Usuario().Valida(usuario2);
             Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void RetornaNomeId_Ok()
+        {
+            bool valor = true;
+            var usuario = new Model.Usuario
+            {
+                Nome = "Teste_retorna_id",
+                Senha = "123asd",
+                Login = "Teste_retorna_id"
+            };
+
+            new Util.Usuario().Valida(usuario);
+            var idNome = new Util.Usuario().RetornaIdNome("Teste_retorna_id");
+            Assert.IsTrue(idNome is int);
         }
 
         [TestMethod]

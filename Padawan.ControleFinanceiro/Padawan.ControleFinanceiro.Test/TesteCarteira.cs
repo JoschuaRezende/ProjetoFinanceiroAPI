@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
 
 namespace Padawan.ControleFinanceiro.Test
 {
@@ -31,6 +30,16 @@ namespace Padawan.ControleFinanceiro.Test
             });
 
             Assert.IsTrue(carteira);
+        }
+
+        [TestMethod]
+        public void Atualizar_Ok()
+        {
+            //var carteira = new Util.Carteira().context.ListarCarteira().Find(p => p.Descricao == "Teste Investimentos");
+
+            //carteira.Descricao = "Nubank Teste";
+
+            //Assert.IsTrue();
         }
     }
 }
