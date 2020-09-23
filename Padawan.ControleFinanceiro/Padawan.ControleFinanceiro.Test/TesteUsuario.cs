@@ -35,7 +35,7 @@ namespace Padawan.ControleFinanceiro.Test
 
             if (!result)
             {
-              Assert.IsFalse(result);
+                Assert.IsFalse(result);
             }
             else
             {
@@ -130,5 +130,40 @@ namespace Padawan.ControleFinanceiro.Test
             };
             Assert.IsNotNull(list.Select(p => p.Nome).ToList());
         }
+
+        [TestMethod]
+        public void ValidaUsuario_OK()
+        {
+            var usuario = new Model.Usuario
+            {
+                Nome = "teste",
+                Senha = "123asd",
+                Login = "teste"
+            };
+
+            var retorno = new Util.Usuario().Valida(usuario);
+
+            if (retorno)
+            {
+                var login = new Util.Usuario().ValidaUsuario("teste");
+                Assert.IsTrue(login);
+            }
+            if (!retorno)
+            {
+                var login = new Util.Usuario().ValidaUsuario("teste");
+                Assert.IsTrue(login);
+            }
+        }
+
+        [TestMethod]
+        public void ValidaUsuario_false()
+        {
+            var login = new Util.Usuario().ValidaUsuario("Naoexistelogin");
+            Assert.IsFalse(login);
+        }
+
+  
+
+
     }
 }
