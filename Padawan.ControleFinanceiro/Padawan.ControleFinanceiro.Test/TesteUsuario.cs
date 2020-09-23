@@ -21,8 +21,6 @@ namespace Padawan.ControleFinanceiro.Test
             Assert.IsFalse(senha);
         }
 
-   
-
         [TestMethod]
         public void ValidaUsuario_Ok()
         {
@@ -70,7 +68,6 @@ namespace Padawan.ControleFinanceiro.Test
         [TestMethod]
         public void RetornaNomeId_Ok()
         {
-            bool valor = true;
             var usuario = new Model.Usuario
             {
                 Nome = "Teste_retorna_id",
@@ -88,6 +85,28 @@ namespace Padawan.ControleFinanceiro.Test
         {
             var idNome = new Util.Usuario().RetornaIdNome("TesteNaoExiste");
             Assert.AreEqual(-1, idNome);
+        }
+
+        [TestMethod]
+        public void ValidaLogin_OK()
+        {
+            var usuario = new Model.Usuario
+            {
+                Nome = "Teste_retorna_id",
+                Senha = "123asd",
+                Login = "Teste_retorna_id"
+            };
+
+            new Util.Usuario().Valida(usuario);
+            var login = new Util.Usuario().ValidaLogin(usuario.Login, usuario.Senha);
+            Assert.IsTrue(login);
+        }
+
+        [TestMethod]
+        public void ValidaLogin_False()
+        {
+            var login = new Util.Usuario().ValidaLogin("naoexiste", "naoexiste1234");
+            Assert.IsFalse(login);
         }
 
         [TestMethod]
@@ -109,7 +128,6 @@ namespace Padawan.ControleFinanceiro.Test
                     Login = "Teste"
                 }
             };
-
             Assert.IsNotNull(list.Select(p => p.Nome).ToList());
         }
     }

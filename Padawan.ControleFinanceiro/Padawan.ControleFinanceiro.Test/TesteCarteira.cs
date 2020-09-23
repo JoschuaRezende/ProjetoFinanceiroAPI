@@ -1,4 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Padawan.ControleFinanceiro.Context;
+using Padawan.ControleFinanceiro.Model;
+using System.Linq;
 
 namespace Padawan.ControleFinanceiro.Test
 {
@@ -29,7 +32,15 @@ namespace Padawan.ControleFinanceiro.Test
                Saldo = 0
             });
 
-            Assert.IsTrue(carteira);
+            if (!carteira)
+            {
+                var result = new BancoUtil<Carteira>().ListarCarteira().Select(p => p.Descricao == "Teste Investimentos").Any();
+                Assert.IsTrue(result);
+            }
+            if (carteira)
+            {
+                Assert.IsTrue(carteira);
+            }
         }
 
         [TestMethod]
