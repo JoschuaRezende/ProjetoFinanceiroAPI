@@ -1,4 +1,5 @@
 ﻿using Padawan.ControleFinanceiro.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -38,8 +39,16 @@ namespace Padawan.ControleFinanceiro.Util
 
         public int RetornaIdNome(string usuario)
         {
-            var objeto = context.ListarUsuario().First(p => p.Nome == usuario);
-            return objeto.Id;
+            try
+            {
+                var objeto = context.ListarUsuario().First(p => p.Nome == usuario);
+                return objeto.Id;
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+       
         }
 
         public bool ValidaLogin(string usuario, string senha)

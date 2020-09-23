@@ -84,6 +84,13 @@ namespace Padawan.ControleFinanceiro.Test
         }
 
         [TestMethod]
+        public void RetornaNomeId_False()
+        {
+            var idNome = new Util.Usuario().RetornaIdNome("TesteNaoExiste");
+            Assert.AreEqual(-1, idNome);
+        }
+
+        [TestMethod]
         public void ListaNomeUsuarios_Ok()
         {
             var list = new List<Model.Usuario>
