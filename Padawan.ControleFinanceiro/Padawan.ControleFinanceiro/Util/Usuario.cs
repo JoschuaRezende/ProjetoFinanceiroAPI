@@ -83,6 +83,11 @@ namespace Padawan.ControleFinanceiro.Util
         public bool Remove(string objeto)
         {
             var result = context.ListarUsuario().Find(p => p.Login == objeto);
+            if (result == null)
+            {
+                return false;
+            }
+
             context.Remove(result);
             return true;
         }
