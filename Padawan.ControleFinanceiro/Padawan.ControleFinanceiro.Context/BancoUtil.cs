@@ -202,7 +202,5 @@ namespace Padawan.ControleFinanceiro.Context
             }
             return true;
         }
-
-    
     }
 }

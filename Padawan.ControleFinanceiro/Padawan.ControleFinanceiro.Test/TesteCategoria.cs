@@ -63,16 +63,13 @@ namespace Padawan.ControleFinanceiro.Test
         [TestMethod]
         public void Delete_Erro()
         {
-
             var result = new Util.Categoria().Remove("testenaoexiste");
             Assert.IsFalse(result);
         }
 
-
         [TestMethod]
         public void Renomear_Ok()
         {
-
             new Util.Categoria().Add(new Model.Categoria
             {
                 Descricao = "teste",
@@ -85,7 +82,6 @@ namespace Padawan.ControleFinanceiro.Test
         [TestMethod]
         public void Renomear_NaoExisteCategoria()
         {
-
             new Util.Categoria().Add(new Model.Categoria
             {
                 Descricao = "teste",

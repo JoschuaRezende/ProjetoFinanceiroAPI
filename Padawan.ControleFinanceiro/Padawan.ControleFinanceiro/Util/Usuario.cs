@@ -48,7 +48,6 @@ namespace Padawan.ControleFinanceiro.Util
             {
                 return -1;
             }
-       
         }
 
         public bool ValidaLogin(string usuario, string senha)
@@ -70,7 +69,6 @@ namespace Padawan.ControleFinanceiro.Util
             {
                 return false;
             }
-            
             filtro.Senha = senha;
             if (!Senha(filtro.Senha))
             {

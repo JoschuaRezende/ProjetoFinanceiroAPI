@@ -162,7 +162,6 @@ namespace Padawan.ControleFinanceiro.Test
             Assert.IsFalse(login);
         }
 
-
         [TestMethod]
         public void Remove_OK()
         {
@@ -212,8 +211,6 @@ namespace Padawan.ControleFinanceiro.Test
             new Util.Usuario().Valida(usuario);
 
             var login = new Util.Usuario().AlterarSenha("naoexisteusuario", "asd123");
-           
-            
             Assert.IsFalse(login);
         }
 

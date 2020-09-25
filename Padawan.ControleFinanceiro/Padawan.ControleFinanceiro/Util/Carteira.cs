@@ -45,6 +45,10 @@ namespace Padawan.ControleFinanceiro.Util
         {
             var carteira = new BancoUtil<Carteira>().ListarCarteira().Find(p => p.Descricao == descricao);
 
+            if (carteira is null)
+            {
+                return -1;
+            }
             var credito = new BancoUtil<Operacao>().ListaOperacaoes().Where(p => p.Tipo == 'c' && p.IdCarteira == carteira.Id).Sum(p => p.Valor);
             var debito = new BancoUtil<Operacao>().ListaOperacaoes().Where(p => p.Tipo == 'd' && p.IdCarteira == carteira.Id).Sum(p => p.Valor);
             return credito - debito;
