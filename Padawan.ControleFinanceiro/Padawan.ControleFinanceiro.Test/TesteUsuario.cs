@@ -185,5 +185,52 @@ namespace Padawan.ControleFinanceiro.Test
             Assert.IsFalse(login);
         }
 
+        [TestMethod]
+        public void AlterarSenha_Ok()
+        {
+            var usuario = new Model.Usuario
+            {
+                Nome = "teste",
+                Senha = "123asd",
+                Login = "teste"
+            };
+            new Util.Usuario().Valida(usuario);
+
+            var login = new Util.Usuario().AlterarSenha("teste", "asd123");
+            Assert.IsTrue(login);
+        }
+
+        [TestMethod]
+        public void AlterarSenha_UsuarioNaoExiste()
+        {
+            var usuario = new Model.Usuario
+            {
+                Nome = "teste",
+                Senha = "123asd",
+                Login = "teste"
+            };
+            new Util.Usuario().Valida(usuario);
+
+            var login = new Util.Usuario().AlterarSenha("naoexisteusuario", "asd123");
+           
+            
+            Assert.IsFalse(login);
+        }
+
+        [TestMethod]
+        public void AlterarSenha_SenhaInvalida()
+        {
+            var usuario = new Model.Usuario
+            {
+                Nome = "teste",
+                Senha = "123asd",
+                Login = "teste"
+            };
+            new Util.Usuario().Valida(usuario);
+
+            var login = new Util.Usuario().AlterarSenha("teste", "asd");
+
+            Assert.IsFalse(login);
+        }
     }
 }

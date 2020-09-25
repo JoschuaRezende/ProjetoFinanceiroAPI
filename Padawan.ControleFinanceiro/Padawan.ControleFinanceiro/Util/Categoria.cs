@@ -44,8 +44,12 @@ namespace Padawan.ControleFinanceiro.Util
         public bool Renomear(string categoria, string novaCategoria)
         {
             var filtro = context.ListarCategoria().Find(p => p.Descricao == categoria);
-            filtro.Descricao = novaCategoria;
+            if (filtro is null)
+            {
+                return false;
+            }
 
+            filtro.Descricao = novaCategoria;
             context.AtualizarCarteira(filtro);
 
             return true;

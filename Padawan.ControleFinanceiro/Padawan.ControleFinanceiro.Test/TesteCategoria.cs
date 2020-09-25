@@ -10,7 +10,7 @@ namespace Padawan.ControleFinanceiro.Test
         {
             var categoria = new Util.Categoria().Add(new Model.Categoria
             {
-                Descricao = "Casa",
+                Descricao = "teste",
             });
 
             if (!categoria)
@@ -65,6 +65,33 @@ namespace Padawan.ControleFinanceiro.Test
         {
 
             var result = new Util.Categoria().Remove("testenaoexiste");
+            Assert.IsFalse(result);
+        }
+
+
+        [TestMethod]
+        public void Renomear_Ok()
+        {
+
+            new Util.Categoria().Add(new Model.Categoria
+            {
+                Descricao = "teste",
+            });
+
+            var result = new Util.Categoria().Renomear("teste", "teste_renomear");
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void Renomear_NaoExisteCategoria()
+        {
+
+            new Util.Categoria().Add(new Model.Categoria
+            {
+                Descricao = "teste",
+            });
+
+            var result = new Util.Categoria().Renomear("Naoexistecategoria", "teste_renomear");
             Assert.IsFalse(result);
         }
     }

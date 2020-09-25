@@ -66,6 +66,11 @@ namespace Padawan.ControleFinanceiro.Util
         public bool AlterarSenha(string usuario, string senha)
         {
             var filtro = context.ListarUsuario().Find(p => p.Login == usuario);
+            if (filtro is null)
+            {
+                return false;
+            }
+            
             filtro.Senha = senha;
             if (!Senha(filtro.Senha))
             {
