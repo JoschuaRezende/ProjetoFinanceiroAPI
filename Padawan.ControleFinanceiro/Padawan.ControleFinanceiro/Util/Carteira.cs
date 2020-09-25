@@ -31,6 +31,7 @@ namespace Padawan.ControleFinanceiro.Util
         public bool AtualizarSaldo(double valor, string descricao)
         {
             var objeto = context.ListarCarteira().Find(p => p.Descricao == descricao);
+
             if (objeto != null)
             {
                 objeto.Saldo = valor;

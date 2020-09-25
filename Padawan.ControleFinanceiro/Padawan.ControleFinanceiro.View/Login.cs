@@ -39,5 +39,10 @@ namespace Padawan.ControleFinanceiro.View
                 MessageBox.Show("Login ou senha Incorreto");
             }
         }
+
+        private void lbl_Senha_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

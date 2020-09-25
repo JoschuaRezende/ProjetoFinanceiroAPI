@@ -127,5 +127,25 @@ namespace Padawan.ControleFinanceiro.Test
                 Assert.IsTrue(carteira);
             }
         }
+
+        [TestMethod]
+        public void AtualizarSaldo_OK()
+        {
+            CriarCarteira();
+
+            var result = new Util.Carteira().AtualizarSaldo(new Util.Carteira().CalcularSaldo("Teste Investimentos"), "Teste Investimentos");
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void AtualizarSaldo_False()
+        {
+            CriarCarteira();
+
+            var result = new Util.Carteira().AtualizarSaldo(new Util.Carteira().CalcularSaldo("Teste Investimentos"), "TesteNaoExiste");
+
+            Assert.IsFalse(result);
+        }
     }
 }
