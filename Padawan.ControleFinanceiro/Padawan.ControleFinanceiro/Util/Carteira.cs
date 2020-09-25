@@ -16,6 +16,10 @@ namespace Padawan.ControleFinanceiro.Util
         public bool Add(Model.Carteira objeto)
         {
             var retorno = context.ListarCarteira().Any(p => p.Descricao == objeto.Descricao);
+            if (objeto.Descricao is null)
+            {
+                return false;
+            }
             if (!retorno)
             {
                 context.Add(objeto);
