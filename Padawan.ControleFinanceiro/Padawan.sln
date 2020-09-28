@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Padawan.ControleFinanceiro.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Padawan.ControleFinanceiro.View", "Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View.csproj", "{6A496D0B-FDC8-48BB-9289-32619AF8B184}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Padawan.ControleFinanceiro.Test", "Padawan.ControleFinanceiro.Test\Padawan.ControleFinanceiro.Test.csproj", "{C3B8E4BF-5DC5-43D5-821D-15A28EEE8BB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Padawan.ControleFinanceiro.Test", "Padawan.ControleFinanceiro.Test\Padawan.ControleFinanceiro.Test.csproj", "{C3B8E4BF-5DC5-43D5-821D-15A28EEE8BB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

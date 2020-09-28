@@ -35,7 +35,6 @@ namespace Padawan.ControleFinanceiro
 
             //Configuração da string connection 
             services.AddDbContext<BancoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("FinanceiroPadawan")));
-       
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -51,10 +50,7 @@ namespace Padawan.ControleFinanceiro
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -62,7 +58,6 @@ namespace Padawan.ControleFinanceiro
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1 HBSIS FINANCEIRO");
                 c.DocExpansion(DocExpansion.None);
             });
-
         }
     }
 }

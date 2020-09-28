@@ -77,7 +77,7 @@ namespace Padawan.ControleFinanceiro.Test
 
             new Util.Usuario().Valida(usuario);
             var idNome = new Util.Usuario().RetornaIdNome("Teste_retorna_id");
-            Assert.IsTrue(idNome is int);
+            Assert.IsTrue(idNome  > 0 || idNome < 0);
         }
 
         [TestMethod]

@@ -1,0 +1,10 @@
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Forms\bin\Debug\Padawan.ControleFinanceiro.Forms.exe.config
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Forms\bin\Debug\Padawan.ControleFinanceiro.Forms.exe
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Forms\bin\Debug\Padawan.ControleFinanceiro.Forms.pdb
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Forms\obj\Debug\Padawan.ControleFinanceiro.Forms.csprojAssemblyReference.cache
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Forms\obj\Debug\Padawan.ControleFinanceiro.Forms.Login.resources
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Forms\obj\Debug\Padawan.ControleFinanceiro.Forms.Properties.Resources.resources
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Forms\obj\Debug\Padawan.ControleFinanceiro.Forms.csproj.GenerateResource.cache
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Forms\obj\Debug\Padawan.ControleFinanceiro.Forms.csproj.CoreCompileInputs.cache
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Forms\obj\Debug\Padawan.ControleFinanceiro.Forms.exe
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro\Padawan.ControleFinanceiro.Forms\obj\Debug\Padawan.ControleFinanceiro.Forms.pdb

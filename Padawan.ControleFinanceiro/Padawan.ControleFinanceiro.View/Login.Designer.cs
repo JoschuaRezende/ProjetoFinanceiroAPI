@@ -67,7 +67,7 @@
             this.lbl_Senha.Size = new System.Drawing.Size(39, 15);
             this.lbl_Senha.TabIndex = 2;
             this.lbl_Senha.Text = "Senha";
-            this.lbl_Senha.Click += new System.EventHandler(this.lbl_Senha_Click);
+            this.lbl_Senha.Click += new System.EventHandler(this.Lbl_Senha_Click);
             // 
             // lbl_CadastrarUsuario
             // 
