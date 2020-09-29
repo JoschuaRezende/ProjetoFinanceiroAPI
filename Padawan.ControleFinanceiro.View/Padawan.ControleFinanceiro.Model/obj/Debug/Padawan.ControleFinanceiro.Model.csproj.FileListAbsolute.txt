@@ -1,0 +1,5 @@
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.Model\bin\Debug\Padawan.ControleFinanceiro.Model.dll
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.Model\bin\Debug\Padawan.ControleFinanceiro.Model.pdb
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.Model\obj\Debug\Padawan.ControleFinanceiro.Model.csproj.CoreCompileInputs.cache
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.Model\obj\Debug\Padawan.ControleFinanceiro.Model.dll
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.Model\obj\Debug\Padawan.ControleFinanceiro.Model.pdb

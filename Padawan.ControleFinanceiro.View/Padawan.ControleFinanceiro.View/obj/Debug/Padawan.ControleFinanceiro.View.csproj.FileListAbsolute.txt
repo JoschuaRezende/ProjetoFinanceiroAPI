@@ -1,0 +1,16 @@
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\bin\Debug\Padawan.ControleFinanceiro.View.exe.config
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\bin\Debug\Padawan.ControleFinanceiro.View.exe
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\bin\Debug\Padawan.ControleFinanceiro.View.pdb
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\obj\Debug\Padawan.ControleFinanceiro.View.csprojAssemblyReference.cache
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\obj\Debug\Padawan.ControleFinanceiro.View.CadastrarUsuario.resources
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\obj\Debug\Padawan.ControleFinanceiro.View.Login.resources
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\obj\Debug\Padawan.ControleFinanceiro.View.Properties.Resources.resources
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\obj\Debug\Padawan.ControleFinanceiro.View.csproj.GenerateResource.cache
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\obj\Debug\Padawan.ControleFinanceiro.View.csproj.CoreCompileInputs.cache
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\obj\Debug\Padawan.ControleFinanceiro.View.exe
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\obj\Debug\Padawan.ControleFinanceiro.View.pdb
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\bin\Debug\Newtonsoft.Json.dll
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\bin\Debug\Padawan.ControleFinanceiro.Model.dll
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\bin\Debug\Padawan.ControleFinanceiro.Model.pdb
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\bin\Debug\Newtonsoft.Json.xml
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\obj\Debug\Padawan.ControleFinanceiro.View.csproj.CopyComplete
