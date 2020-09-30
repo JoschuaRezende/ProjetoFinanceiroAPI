@@ -16,6 +16,7 @@ namespace Padawan.ControleFinanceiro.Util
         {
             var retorno = context.ListarBanco().Any(p => p.Descricao == banco.Descricao);
 
+
             if (!retorno)
             {
                 context.Add(banco);

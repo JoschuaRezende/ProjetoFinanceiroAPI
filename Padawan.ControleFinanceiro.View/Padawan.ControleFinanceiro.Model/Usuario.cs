@@ -13,11 +13,19 @@ namespace Padawan.ControleFinanceiro.Model
         public string Login { get; set; }
         public string Senha { get; set; }
 
-  //      public ICollection<Banco> Bancos { get; set; }
+        public ICollection<Banco> Bancos { get; set; }
 
-        //public Usuario()
-        //{
-        //    Bancos = new HashSet<Banco>();
-        //}
+        public Usuario()
+        {
+            Bancos = new HashSet<Banco>();
+        }
+
+
+        public override string ToString()
+        {
+            return this.Nome;
+        }
     }
+
+  
 }

@@ -43,5 +43,10 @@ namespace Padawan.ControleFinanceiro.View
         private void Lbl_Senha_Click(object sender, EventArgs e)
         {
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

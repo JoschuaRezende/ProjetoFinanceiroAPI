@@ -71,6 +71,7 @@
             this.Controls.Add(this.btn_Financeiro);
             this.Name = "Principal";
             this.Text = "Principal";
+            this.Load += new System.EventHandler(this.Principal_Load);
             this.ResumeLayout(false);
 
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Padawan.ControleFinanceiro.View.Cadastro;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace Padawan.ControleFinanceiro.View
         public Principal()
         {
             InitializeComponent();
+        }
+
+        private void categoriaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var categoria = new Categoria();
+            categoria.ShowDialog();
+            this.Close();
         }
     }
 }

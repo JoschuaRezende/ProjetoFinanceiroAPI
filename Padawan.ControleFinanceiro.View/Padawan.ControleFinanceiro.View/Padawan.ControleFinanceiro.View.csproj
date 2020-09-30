@@ -55,6 +55,18 @@
     <Compile Include="CadastrarUsuario.Designer.cs">
       <DependentUpon>CadastrarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cadastro\Banco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\Banco.Designer.cs">
+      <DependentUpon>Banco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\Categoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\Categoria.Designer.cs">
+      <DependentUpon>Categoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,8 +85,17 @@
     <EmbeddedResource Include="CadastrarUsuario.resx">
       <DependentUpon>CadastrarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\Banco.resx">
+      <DependentUpon>Banco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\Categoria.resx">
+      <DependentUpon>Categoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

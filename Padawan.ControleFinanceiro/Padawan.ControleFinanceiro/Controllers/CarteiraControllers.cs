@@ -31,7 +31,8 @@ namespace Padawan.ControleFinanceiro.Controllers
                     status.ResultadoOperacao(true, statusNegativo, "Erro ao adicionar");
                     return BadRequest(status);
                 }
-                status.ResultadoOperacao(false, statusNegativo, "Adicionado com sucesso");
+                
+                status.ResultadoOperacao(false, statusPositivo, "Adicionado com sucesso");
                 return Ok(status);
             }
             catch (Exception ex)

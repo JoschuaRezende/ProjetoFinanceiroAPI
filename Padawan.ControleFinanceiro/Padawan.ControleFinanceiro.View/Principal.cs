@@ -15,5 +15,10 @@ namespace Padawan.ControleFinanceiro.View
             var operacaofinanceira = new OperacaoFinanceira();
             operacaofinanceira.ShowDialog();
         }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Banco.cs" />
+    <Compile Include="Carteira.cs" />
+    <Compile Include="Categoria.cs" />
+    <Compile Include="Operacao.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

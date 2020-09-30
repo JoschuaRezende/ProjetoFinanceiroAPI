@@ -12,10 +12,11 @@ namespace Padawan.ControleFinanceiro.Controllers
         private const System.Net.HttpStatusCode statusNegativo = System.Net.HttpStatusCode.BadRequest;
         private const System.Net.HttpStatusCode statusPositivo = System.Net.HttpStatusCode.OK;
         private readonly Result<List<Banco>> status;
-        public readonly Util.Banco banco;
+        private readonly Util.Banco banco;
 
         public BancoControllers()
         {
+            status = new Result<List<Model.Banco>>();
             banco = new Util.Banco();
         }
 
@@ -24,13 +25,18 @@ namespace Padawan.ControleFinanceiro.Controllers
         public ActionResult PostBanco(Banco usuario)
         {
             try
+            
             {
                 if (!banco.Add(usuario))
                 {
                     status.ResultadoOperacao(true, statusNegativo, "Erro ao adicionar");
                     return BadRequest(status);
                 }
-                status.ResultadoOperacao(true, statusPositivo, "Adicionado com sucesso");
+
+
+                status.ResultadoOperacao(false, statusPositivo, "Adicionado com sucesso");
+
+
                 return Ok(status);
             }
             catch (Exception ex)

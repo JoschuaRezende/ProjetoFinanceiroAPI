@@ -27,7 +27,7 @@ namespace Padawan.ControleFinanceiro.Controllers
             {
                 if (!categoria.Add(objeto))
                 {
-                    status.ResultadoOperacao(true, statusNegativo, "Erro ao Adicionar");
+                    status.ResultadoOperacao(true, statusNegativo, "Já existe essa categoria");
                     return BadRequest(status);
                 }
                 status.ResultadoOperacao(false, statusPositivo, "Adicionado com sucesso");

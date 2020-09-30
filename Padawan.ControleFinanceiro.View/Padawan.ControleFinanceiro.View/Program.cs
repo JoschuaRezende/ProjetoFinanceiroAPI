@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Padawan.ControleFinanceiro.View.Cadastro;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Padawan.ControleFinanceiro.View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Banco());
         }
     }
 }
