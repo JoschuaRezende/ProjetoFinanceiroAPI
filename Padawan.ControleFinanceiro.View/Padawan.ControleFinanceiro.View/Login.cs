@@ -45,8 +45,7 @@ namespace Padawan.ControleFinanceiro.View
 
             if (result.Result.IsSuccessStatusCode)
             {
-                var principal = new Principal();
-                principal.ShowDialog();
+                Application.Run(new Principal());
                 this.Close();
             }
             else

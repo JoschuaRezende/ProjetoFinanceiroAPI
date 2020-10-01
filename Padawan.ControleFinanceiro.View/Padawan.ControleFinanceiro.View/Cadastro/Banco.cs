@@ -21,7 +21,6 @@ namespace Padawan.ControleFinanceiro.View.Cadastro
         private void btn_Gravar_Click(object sender, EventArgs e)
         {
             const string URL = "https://localhost:44360/Banco/Cadastro";
-         
             var banco = new Model.Banco
             {
                 IdUsuario = ((Model.Usuario)cmb_Usuario.SelectedItem).Id,

@@ -20,12 +20,9 @@ namespace Padawan.ControleFinanceiro.Model
             Bancos = new HashSet<Banco>();
         }
 
-
         public override string ToString()
         {
             return this.Nome;
         }
     }
-
-  
 }

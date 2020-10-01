@@ -17,7 +17,7 @@ namespace Padawan.ControleFinanceiro.View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Banco());
+            Application.Run(new Login());
         }
     }
 }

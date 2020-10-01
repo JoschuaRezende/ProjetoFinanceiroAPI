@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Padawan.ControleFinanceiro.Model
 {
-    public class Carteira 
+    public class Carteira
     {
         public Carteira()
         {

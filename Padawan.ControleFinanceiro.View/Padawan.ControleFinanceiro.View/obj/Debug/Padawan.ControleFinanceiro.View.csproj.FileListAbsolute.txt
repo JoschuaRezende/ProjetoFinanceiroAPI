@@ -17,3 +17,4 @@ C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFin
 C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\obj\Debug\Padawan.ControleFinanceiro.View.csproj.CopyComplete
 C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\obj\Debug\Padawan.ControleFinanceiro.View.exe
 C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\obj\Debug\Padawan.ControleFinanceiro.View.pdb
+C:\Users\joschua.silva\Documents\GitHub\ProjetoFinanceiroAPI\Padawan.ControleFinanceiro.View\Padawan.ControleFinanceiro.View\obj\Debug\Padawan.ControleFinanceiro.View.Cadastro.Carteira.resources
